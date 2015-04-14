@@ -1,0 +1,188 @@
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title> Who needs colons and equals signs? </title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+<header>
+	<ul class="right">
+		<li> Lars Høie (Design+interaction)</li>
+		<li>+47 924 44 762</li>
+	</ul>
+</header>
+
+<div class="right-page">
+	<h1>Publication <a class="number-projects" href="#">6</a></h1>
+	<h1>Interactive <a class="number-projects" href="#">3</a></h1>
+	<h1>Identity <a class="number-projects" href="#">2</a></h1>
+
+	<div class="about">
+		<p>
+			I’m a graphic designer based in London.
+			Currently studying at Central Saint Martins.
+		</p>
+	</div>
+
+<div class="left-page">
+	<table class="project-list">
+		<tr>
+			<td>2015</td>
+			<td>Identity</td>
+			<td>So–called—collective</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>Interactive</td>
+			<td>Debate as attack</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>Interactive</td>
+			<td>The whole nine yards</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>Publication</td>
+			<td>Shoot first!</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>Interactive</td>
+			<td>The art of getting lost</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>Interactive</td>
+			<td>Jump around</td>
+		</tr>
+		<tr>
+			<td>2014</td>
+			<td>Publication</td>
+			<td>Old School A—Z</td>
+		</tr>
+		<tr>
+			<td>2014</td>
+			<td>Publication</td>
+			<td>News echo-chamber</td>
+		</tr>
+		<tr>
+			<td>2014</td>
+			<td>Publication</td>
+			<td>Anatomy of a designer</td>
+		</tr>
+		<tr>
+			<td>2014</td>
+			<td>Publication</td>
+			<td>Bold magazine</td>
+		</tr>
+		<tr>
+			<td>2013</td>
+			<td>Identity</td>
+			<td>Haandbryggeriet</td>
+		</tr>
+	</table>
+</div>
+
+
+<section>
+<ul class="project-images">
+	<li><a href="/work/design-is-everything">
+			<figure>
+				<img src=" /assets/images/1/_DSF3919.jpg " alt="design is everything">
+				<figcaption>Design is everything</figcaption>
+			</figure>
+		</a></li>
+	<li><a href="/work/design-is-everything">
+			<figure>
+				<img src=" /assets/images/1/_DSF3927.jpg " alt="design is everything">
+				<figcaption>Design is everything 2</figcaption>
+			</figure>
+		</a></li>
+	<li><a href="/work/design-is-everything">
+			<figure>
+				<img src=" /assets/images/1/_DSF3925.jpg " alt="design is everything">
+				<figcaption>Design is everything 3</figcaption>
+			</figure>
+		</a></li>
+</ul>
+</section>
+
+
+
+<footer></footer>
+
+    <!-- Fun Zone! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://rawgit.com/shumagorath86/frameScrub/master/js/frameScrub.min.js"></script>
+    <script>
+        // $(window).load(function() {
+        //     $(".project").frameScrub({
+        //     });
+        // });
+    </script>
+
+    <script>
+        // var rev = "fwd";
+        // function titlebar(val){
+        //     var msg  = " Who needs colons and equals signs? ";
+        //     var res = " ";
+        //     var speed = 100;
+        //     var pos = val;
+        //     msg = "   |-"+msg+"-|";
+        //     var le = msg.length;
+        //     if(rev == "fwd"){
+        //         if(pos < le){
+        //             pos = pos+1;
+        //             scroll = msg.substr(0,pos);
+        //             document.title = scroll;
+        //             timer = window.setTimeout("titlebar("+pos+")",speed);
+        //         } else {
+        //             rev = "bwd";
+        //             timer = window.setTimeout("titlebar("+pos+")",speed);
+        //         }
+        //     } else {
+        //         if(pos > 0) {
+        //             pos = pos-1;
+        //             var ale = le-pos;
+        //             scrol = msg.substr(ale,le);
+        //             document.title = scrol;
+        //             timer = window.setTimeout("titlebar("+pos+")",speed);
+        //         } else {
+        //             rev = "fwd";
+        //             timer = window.setTimeout("titlebar("+pos+")",speed);
+        //         }
+        //     }
+        // }
+        </script>
+        <script>
+            (function($){
+
+            $.fn.shuffle = function() {
+
+                var allElems = this.get(),
+                    getRandom = function(max) {
+                        return Math.floor(Math.random() * max);
+                    },
+                    shuffled = $.map(allElems, function(){
+                        var random = getRandom(allElems.length),
+                            randEl = $(allElems[random]).clone(true)[0];
+                        allElems.splice(random, 1);
+                        return randEl;
+                   });
+
+                this.each(function(i){
+                    $(this).replaceWith($(shuffled[i]));
+                });
+
+                return $(shuffled);
+
+            };
+
+            })(jQuery);
+
+            $('.project-images li').shuffle();
+        </script>
