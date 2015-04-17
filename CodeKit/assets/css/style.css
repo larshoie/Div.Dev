@@ -701,11 +701,6 @@ li {
 .left-page:hover {
   z-index: 9999;
 }
-.left-page table {
-  display: block;
-  position: absolute;
-  top: 19.5rem;
-}
 
 .right-page {
   position: fixed;
@@ -717,8 +712,11 @@ li {
   top: 0;
   right: 0;
 }
-.right-page:hover {
-  z-index: 9999;
+.right-page table {
+  display: block;
+  position: absolute;
+  top: 19.5rem;
+  display: none;
 }
 
 header {
@@ -745,9 +743,6 @@ header .left {
 header li {
   display: inline;
 }
-header li:last-child {
-  float: right;
-}
 
 h1 {
   position: relative;
@@ -757,7 +752,7 @@ h1 {
   padding: 0;
   margin: -0.253vw;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 0.001rem #000;
 }
 
 .number-projects {
@@ -771,6 +766,7 @@ h1 {
   display: inline;
   bottom: 3.5vw;
   margin-left: -1.3vw;
+  -webkit-text-stroke: 0;
 }
 
 table {

@@ -97,12 +97,6 @@ li {
   z-index:9999;
   //overflow-y: scroll;
     }
-  table {
-    display: block;
-    position: absolute;
-    top: 19.5rem;
-    //display: none;
-  }
 }
 
 .right-page {
@@ -116,9 +110,16 @@ li {
   top: 0;
   right: 0;
   &:hover {
-    z-index:9999;
+    //z-index:9999;
     //overflow-y: scroll;
   }
+  table {
+    display: block;
+    position: absolute;
+    top: 19.5rem;
+    display: none;
+  }
+
 }
 
 header {
@@ -147,7 +148,7 @@ header {
     display: inline;
   }
   li:last-child {
-    float: right;
+    //float: right;
   }
 }
 
@@ -160,7 +161,8 @@ h1 {
   padding:0;
   margin:-0.253vw;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  //color: #fff;
+  -webkit-text-stroke: 0.001rem #000;
 }
 
 .number-projects {
@@ -174,6 +176,8 @@ position:relative;
 display:inline;
 bottom:3.5vw;
 margin-left: -1.3vw;
+-webkit-text-stroke: 0;
+//color: #000;
 }
 
 table {
