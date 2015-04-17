@@ -93,7 +93,12 @@ li {
   float:left;
   background: #000;
   color:#fff;
+  &:hover {
+  z-index:9999;
+  //overflow-y: scroll;
+    }
   table {
+    display: block;
     position: absolute;
     top: 19.5rem;
     //display: none;
@@ -101,28 +106,41 @@ li {
 }
 
 .right-page {
+  position: fixed;
   padding:$padding;
+  min-height:100vh;
   width:50%;
-  float:right;
+  //float:right;
   background: #fff;
   color:#000;
   top: 0;
   right: 0;
+  &:hover {
+    z-index:9999;
+    //overflow-y: scroll;
+  }
 }
 
 header {
   //background:#fff;
   //height: 3rem;
-  position: fixed;
-  top: 0;
-  left:0;
-  right:0;
-  z-index: 99999;
+  width: 100vw;
+  z-index: 1;
   .right {
     width: 50vw;
     right:0;
     display:block;
-    position:absolute;
+    position:fixed;
+    padding:$padding;
+    z-index: 99999;
+  }
+  .left {
+    z-index: 1;
+    width: 50vw;
+    color: #fff;
+    left:0;
+    display:block;
+    position:fixed;
     padding:$padding;
   }
   li {
@@ -178,7 +196,7 @@ img {
 .project-images {
   padding-top: 10rem;
   position: relative;
-  z-index:9999;
+  z-index:999;
   top:0;
   left:0;
   right:0;
@@ -186,23 +204,39 @@ img {
 
   //opacity: 0.8;
         li {
-          width: 70vw;
-          margin-left:-50vw;
-          float:left;
+          float:none;
+          margin: 100vmin auto;
+          width: 100vmin;
+          //margin-left:50vmin;
+          //margin-top: 100vmin;
+          //margin-left:0vw;
+
+
+        /*
+
         &:nth-child(2) {
-          width: 55vw;
-          margin-left:5vw;
+          padding:0;
+          width: 100vw;
+          margin-top: 100vh;
+          //width: 55vw;
+          //margin-left:5vw;
           float:right;
         }
         &:nth-child(3) {
-          width: 30vw;
-          margin-top: 20vw;
+          padding:0;
+          width: 50vw;
+          margin:auto;
+          margin-top: 100vh;
           //margin-left:1vw;
-          //float:none;
+          float:right;
         }
         &:nth-child(4) {
-          width: 10%;
+          padding:0;
+          width: 100vw;
+          margin-top: 100vh;
         }
+
+        */
 
     }
 
