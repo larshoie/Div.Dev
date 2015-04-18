@@ -642,7 +642,7 @@ body {
 body {
   overflow-x: hidden;
   box-sizing: border-box;
-  font-family: "RT Obligat", "Times NR MT Pro", "Larish Alte", "Apercu", "comic sans MS", "mistral", "Times New Roman", "Mineral", Serif;
+  font-family: "RT Obligat", "Mineral", "Times NR MT Pro", "Larish Alte", "Apercu", "comic sans MS", "mistral", "Times New Roman", Serif;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
   -webkit-font-feature-settings: "kern";
@@ -652,16 +652,15 @@ body {
   -webkit-font-kerning: normal;
      -moz-font-kerning: normal;
           font-kerning: normal;
-  font-style: condenced;
   font-size: 24px;
   font-size: 2vw;
+  line-height: 1.4;
   color: #000;
   letter-spacing: 0.05rem;
   padding: 0;
   margin: 0;
   margin: auto;
   background: #fff;
-  min-height: 2000vh;
 }
 
 *, *:before, *:after {
@@ -779,6 +778,37 @@ table {
 table td {
   padding: 0 1.5rem;
   font-size: 2vw;
+}
+
+.project-list {
+  color: #fff;
+  margin-top: 30vmin;
+}
+.project-list ul {
+  display: block;
+  font-size: 2vw;
+  letter-spacing: 0.15rem;
+}
+.project-list ul li {
+  display: inline;
+}
+.project-list ul li:nth-child(1) {
+  float: left;
+  width: 60%;
+  text-align: left;
+}
+.project-list ul li:nth-child(2) {
+  float: left;
+  width: 30%;
+  color: transparent;
+  -webkit-text-stroke: 0.05rem #fff;
+}
+.project-list ul li:last-child {
+  float: right;
+  width: 10%;
+  text-align: left;
+  color: transparent;
+  -webkit-text-stroke: 0.05rem #fff;
 }
 
 img {
