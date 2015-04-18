@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -122,7 +123,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-h1 {
+h1, .featured li, .about {
   font-size: 2em;
   margin: 0.67em 0;
 }
@@ -701,28 +702,25 @@ li {
 
 .left-page {
   padding: 2vw;
-  position: fixed;
   z-index: 0;
   top: 0;
   left: 0;
   bottom: 0;
   width: 50vw;
   float: left;
-  background: #000;
-  color: #fff;
-}
-.left-page table {
-  display: block;
-  position: absolute;
-  top: 19.5rem;
+  background: #fff;
+  color: #000;
+  min-height: 100vh;
 }
 
 .right-page {
   position: fixed;
   padding: 2vw;
-  min-height: 100vh;
   width: 50%;
-  color: #000;
+  float: right;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
   top: 0;
   right: 0;
 }
@@ -734,32 +732,35 @@ header {
 header .left {
   z-index: 1;
   width: 50vw;
-  color: #fff;
+  color: #000;
   left: 0;
   display: block;
   position: fixed;
   padding: 2vw;
+  /* li:nth-child(1) { //navn på prosjekt
+    float: left;
+    width: 60%;
+    text-align: left;
+    //display: none;
+  }
+  li:nth-child(2) { //type prosjekt
+   float: left;
+   width: 30%;
+   color: transparent;
+   -webkit-text-stroke: 0.05rem #fff;
+   //display: none;
+  }
+  li:last-child { //year
+    float: right;
+    width: 10%;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 0.05rem #fff;
+    //display: none;
+  } */
 }
 header .left a {
-  color: #fff;
-}
-header .left li:nth-child(1) {
-  float: left;
-  width: 60%;
-  text-align: left;
-}
-header .left li:nth-child(2) {
-  float: left;
-  width: 30%;
-  color: transparent;
-  -webkit-text-stroke: 0.05rem #fff;
-}
-header .left li:last-child {
-  float: right;
-  width: 10%;
-  text-align: left;
-  color: transparent;
-  -webkit-text-stroke: 0.05rem #fff;
+  color: #000;
 }
 header .right {
   width: 50vw;
@@ -768,15 +769,13 @@ header .right {
   position: fixed;
   padding: 2vw;
   z-index: 99999;
+  color: #fff;
 }
 header li {
   display: inline;
 }
-header li:last-child {
-  float: right;
-}
 
-h1 {
+h1, .featured li, .about {
   position: relative;
   top: 15rem;
   font-size: 9vw;
@@ -798,6 +797,8 @@ h1 {
   display: inline;
   bottom: 3.5vw;
   margin-left: -1.3vw;
+  color: #fff;
+  -webkit-text-stroke: 0 #fff;
 }
 
 table {
@@ -818,10 +819,10 @@ table td {
   margin: 0;
   z-index: 9999;
   position: fixed;
-  top: 25vmin;
-  left: 25vmin;
-  right: 25vmin;
-  bottom: 25vmin;
+  top: 30vmin;
+  left: 30vmin;
+  right: 30vmin;
+  bottom: 30vmin;
   pointer-events: none;
 }
 .project-list ul {
@@ -842,13 +843,15 @@ table td {
 }
 .project-list ul li:nth-child(2) {
   float: left;
-  width: 30%;
+  margin-right: 5%;
+  width: 25%;
+  text-align: left;
   color: transparent;
   -webkit-text-stroke: 0.05rem #fff;
 }
 .project-list ul li:last-child {
-  float: right;
   width: 10%;
+  float: right;
   text-align: left;
   color: transparent;
   -webkit-text-stroke: 0.05rem #fff;
@@ -907,20 +910,30 @@ img {
   display: none;
 }
 
+.featured li {
+  color: transparent;
+  -webkit-text-stroke: 0.2rem #fff;
+}
 .featured figure {
   opacity: 0;
   padding: 0;
   margin: 0;
   z-index: 9999;
   position: fixed;
-  top: 25vmin;
-  left: 25vmin;
-  right: 25vmin;
-  bottom: 25vmin;
+  top: 20vmin;
+  left: 20vmin;
+  right: 20vmin;
+  bottom: 20vmin;
   pointer-events: none;
 }
 .featured li:hover figure {
   opacity: 1;
+}
+
+.about {
+  font-size: 6.5vw;
+  -webkit-text-stroke: 0.2rem #000;
+  padding-bottom: 10vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -97,36 +97,31 @@ li {
   //@extend .container;
   //min-height:100vh;
   padding:2vw;
-  position:fixed;
+  //position:fixed;
   z-index: 0;
   top: 0;
   left: 0;
   bottom: 0;
   width:50vw;
   float:left;
-  background: #000;
-  color:#fff;
+  background: #fff;
+  color:#000;
+  min-height:100vh;
+  //overflow:hidden;
   &:hover {
   //z-index:9999;
   //overflow-y: scroll;
     }
-  table {
-    display: block;
-    position: absolute;
-    top: 19.5rem;
-    //display: none;
-  }
-
 }
 
 .right-page {
   position: fixed;
   padding:$padding;
-  min-height:100vh;
   width:50%;
-  //float:right;
-  //background: #fff;
-  color:#000;
+  float:right;
+  background: #000;
+  color:#fff;
+  min-height:100vh;
   top: 0;
   right: 0;
   &:hover {
@@ -144,15 +139,16 @@ header {
   .left {
     z-index: 1;
     width: 50vw;
-    color: #fff;
+    color: #000;
     left:0;
     display:block;
     position:fixed;
     padding:$padding;
     a {
-      color: #fff;
-    }
-    li:nth-child(1) { //navn på prosjekt
+      color: #000;
+     }
+
+    /* li:nth-child(1) { //navn på prosjekt
       float: left;
       width: 60%;
       text-align: left;
@@ -172,7 +168,7 @@ header {
       color: transparent;
       -webkit-text-stroke: 0.05rem #fff;
       //display: none;
-    }
+    } */
   }
   .right {
     width: 50vw;
@@ -181,12 +177,13 @@ header {
     position:fixed;
     padding:$padding;
     z-index: 99999;
+    color:#fff;
   }
   li {
     display: inline;
   }
   li:last-child {
-    float: right;
+    //float: right;
   }
 }
 
@@ -213,6 +210,8 @@ position:relative;
 display:inline;
 bottom:3.5vw;
 margin-left: -1.3vw;
+color: #fff;
+-webkit-text-stroke: 0 #fff;
 }
 
 table {
@@ -232,10 +231,10 @@ table {
     margin:0;
     z-index:9999;
     position: fixed;
-    top: 25vmin;
-    left: 25vmin;
-    right: 25vmin;
-    bottom: 25vmin;
+    top: 30vmin;
+    left: 30vmin;
+    right: 30vmin;
+    bottom: 30vmin;
     //max-height:100%;
     pointer-events:none;
   }
@@ -259,14 +258,16 @@ table {
     }
     li:nth-child(2) { //type prosjekt
      float: left;
-     width: 30%;
+     margin-right:5%;
+     width: 25%;
+     text-align: left;
      color: transparent;
      -webkit-text-stroke: 0.05rem #fff;
      //display: none;
     }
     li:last-child { //year
-      float: right;
       width: 10%;
+      float: right;
       text-align: left;
       color: transparent;
       -webkit-text-stroke: 0.05rem #fff;
@@ -348,16 +349,23 @@ img {
 
 
 .featured {
+    li {
+      @extend h1;
+      color: transparent;
+      -webkit-text-stroke: 0.2rem #fff;
+      //width:100%;
+      //height:30%;
+    }
     figure {
       opacity:0;
       padding:0;
       margin:0;
       z-index:9999;
       position: fixed;
-      top: 25vmin;
-      left: 25vmin;
-      right: 25vmin;
-      bottom: 25vmin;
+      top: 20vmin;
+      left: 20vmin;
+      right: 20vmin;
+      bottom: 20vmin;
       //max-height:100%;
       pointer-events:none;
       }
@@ -365,6 +373,17 @@ img {
       opacity: 1;
       }
   }
+
+
+
+.about {
+  @extend h1;
+  font-size: 6.5vw;
+  -webkit-text-stroke: 0.2rem #000;
+  padding-bottom:10vh;
+}
+
+
 
 
 @media screen and (min-width: 40em) {
