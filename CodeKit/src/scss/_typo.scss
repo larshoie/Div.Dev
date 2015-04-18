@@ -17,7 +17,9 @@ $padding:2vw;
   zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-
+//* {
+//  transform: rotate(45deg);
+//}
 
 body {
   overflow-x:hidden;
@@ -40,7 +42,7 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   //font-style: condenced;
-  font-size: 24px;
+  //font-size: 24px;
   font-size: 2vw;
   line-height: 1.4;
   color:#000;
@@ -261,21 +263,26 @@ table {
      margin-right:5%;
      width: 25%;
      text-align: left;
-     color: transparent;
-     -webkit-text-stroke: 0.05rem #fff;
+     //color: transparent;
+     //-webkit-text-stroke: 0.05rem #fff;
      //display: none;
     }
     li:last-child { //year
       width: 10%;
       float: right;
       text-align: left;
-      color: transparent;
-      -webkit-text-stroke: 0.05rem #fff;
+      //color: transparent;
+      //-webkit-text-stroke: 0.05rem #fff;
       //display: none;
     }
   }
 }
 
+
+.coming-soon {
+  text-decoration: line-through;
+  color: #999;
+}
 
 img {
   width: 100%;
@@ -376,6 +383,13 @@ img {
 
 
 
+.about, h2 {
+  font-size: 1.5vw;
+  padding-bottom: 1rem;
+}
+
+
+
 .ingress {
   @extend h1;
   position: static;
@@ -385,10 +399,31 @@ img {
   margin-bottom:10vh;
 }
 
+.approach, .education {
+  width: 60%;
+  padding-bottom: 10vh;
+  //margin-bottom:10vh;
+  //float: none;
+  //clear: right;
+}
+
 .experience {
   //margin-top: 2rem;
-  display: block;
+  //display: block;
+  width: 50%;
+  //float: left;
+  padding-bottom: 10rem;
+  //transform: rotate(25deg);
 }
+
+.contact {
+  @extend .experience;
+}
+
+.education li {
+  //padding-bottom: 1rem;
+}
+
 
 
 
