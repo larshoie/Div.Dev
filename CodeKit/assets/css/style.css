@@ -938,18 +938,25 @@ img {
 .ingress {
   position: static;
   display: block;
-  font-size: 6.5vw;
+  line-height: 1.23;
+  font-size: 6.6vw;
+  margin-top: -1.9vw;
   -webkit-text-stroke: 0.2rem #000;
   margin-bottom: 10vh;
 }
 
+.approach {
+  display: none;
+}
+
 .approach, .education {
-  width: 60%;
+  width: 50%;
   padding-bottom: 10vh;
 }
 
 .experience, .contact {
   width: 50%;
+  float: left;
   padding-bottom: 10rem;
 }
 
