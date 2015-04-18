@@ -681,6 +681,20 @@ a:hover, .active {
   border-bottom: 0.15rem solid #000;
 }
 
+.logo {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  font-size: 20vw;
+  left: 0;
+  right: 0;
+  top: 30%;
+  bottom: 0;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 0.4vw yellow;
+}
+
 li {
   list-style: none;
 }
@@ -697,9 +711,6 @@ li {
   background: #000;
   color: #fff;
 }
-.left-page:hover {
-  z-index: 9999;
-}
 .left-page table {
   display: block;
   position: absolute;
@@ -711,26 +722,14 @@ li {
   padding: 2vw;
   min-height: 100vh;
   width: 50%;
-  background: #fff;
   color: #000;
   top: 0;
   right: 0;
-}
-.right-page:hover {
-  z-index: 9999;
 }
 
 header {
   width: 100vw;
   z-index: 1;
-}
-header .right {
-  width: 50vw;
-  right: 0;
-  display: block;
-  position: fixed;
-  padding: 2vw;
-  z-index: 99999;
 }
 header .left {
   z-index: 1;
@@ -740,6 +739,35 @@ header .left {
   display: block;
   position: fixed;
   padding: 2vw;
+}
+header .left a {
+  color: #fff;
+}
+header .left li:nth-child(1) {
+  float: left;
+  width: 60%;
+  text-align: left;
+}
+header .left li:nth-child(2) {
+  float: left;
+  width: 30%;
+  color: transparent;
+  -webkit-text-stroke: 0.05rem #fff;
+}
+header .left li:last-child {
+  float: right;
+  width: 10%;
+  text-align: left;
+  color: transparent;
+  -webkit-text-stroke: 0.05rem #fff;
+}
+header .right {
+  width: 50vw;
+  right: 0;
+  display: block;
+  position: fixed;
+  padding: 2vw;
+  z-index: 99999;
 }
 header li {
   display: inline;
@@ -756,7 +784,7 @@ h1 {
   padding: 0;
   margin: -0.253vw;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 0.002rem #fff;
 }
 
 .number-projects {
@@ -784,6 +812,18 @@ table td {
   color: #fff;
   margin-top: 30vmin;
 }
+.project-list figure {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  position: fixed;
+  top: 25vmin;
+  left: 25vmin;
+  right: 25vmin;
+  bottom: 25vmin;
+  pointer-events: none;
+}
 .project-list ul {
   display: block;
   font-size: 2vw;
@@ -796,6 +836,9 @@ table td {
   float: left;
   width: 60%;
   text-align: left;
+}
+.project-list ul li:nth-child(1):hover figure {
+  opacity: 1;
 }
 .project-list ul li:nth-child(2) {
   float: left;
@@ -821,6 +864,7 @@ img {
 }
 
 .project-images {
+  display: none;
   padding-top: 10rem;
   position: relative;
   z-index: 999;
@@ -861,6 +905,22 @@ img {
 }
 .project-images figcaption {
   display: none;
+}
+
+.featured figure {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  position: fixed;
+  top: 25vmin;
+  left: 25vmin;
+  right: 25vmin;
+  bottom: 25vmin;
+  pointer-events: none;
+}
+.featured li:hover figure {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

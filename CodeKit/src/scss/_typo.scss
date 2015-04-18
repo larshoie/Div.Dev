@@ -70,6 +70,20 @@ a:hover, .active  {
   border-bottom: 0.15rem solid #000;
 }
 
+.logo {
+  display: none;
+  position:fixed;
+  z-index:-1;
+  font-size: 20vw;
+  //color: blue;
+  left:0;
+  right:0;
+  top:30%;
+  bottom:0;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 0.4vw yellow;
+}
 
 ul {
 
@@ -93,7 +107,7 @@ li {
   background: #000;
   color:#fff;
   &:hover {
-  z-index:9999;
+  //z-index:9999;
   //overflow-y: scroll;
     }
   table {
@@ -111,12 +125,12 @@ li {
   min-height:100vh;
   width:50%;
   //float:right;
-  background: #fff;
+  //background: #fff;
   color:#000;
   top: 0;
   right: 0;
   &:hover {
-    z-index:9999;
+    //z-index:9999;
     //overflow-y: scroll;
   }
 }
@@ -126,14 +140,7 @@ header {
   //height: 3rem;
   width: 100vw;
   z-index: 1;
-  .right {
-    width: 50vw;
-    right:0;
-    display:block;
-    position:fixed;
-    padding:$padding;
-    z-index: 99999;
-  }
+
   .left {
     z-index: 1;
     width: 50vw;
@@ -142,6 +149,38 @@ header {
     display:block;
     position:fixed;
     padding:$padding;
+    a {
+      color: #fff;
+    }
+    li:nth-child(1) { //navn på prosjekt
+      float: left;
+      width: 60%;
+      text-align: left;
+      //display: none;
+    }
+    li:nth-child(2) { //type prosjekt
+     float: left;
+     width: 30%;
+     color: transparent;
+     -webkit-text-stroke: 0.05rem #fff;
+     //display: none;
+    }
+    li:last-child { //year
+      float: right;
+      width: 10%;
+      text-align: left;
+      color: transparent;
+      -webkit-text-stroke: 0.05rem #fff;
+      //display: none;
+    }
+  }
+  .right {
+    width: 50vw;
+    right:0;
+    display:block;
+    position:fixed;
+    padding:$padding;
+    z-index: 99999;
   }
   li {
     display: inline;
@@ -160,7 +199,7 @@ h1 {
   padding:0;
   margin:-0.253vw;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 0.002rem #fff;
 }
 
 .number-projects {
@@ -187,6 +226,20 @@ table {
 .project-list {
   color: #fff;
   margin-top: 30vmin;
+  figure {
+    opacity:0;
+    padding:0;
+    margin:0;
+    z-index:9999;
+    position: fixed;
+    top: 25vmin;
+    left: 25vmin;
+    right: 25vmin;
+    bottom: 25vmin;
+    //max-height:100%;
+    pointer-events:none;
+  }
+
   ul {
     //padding: 0 1.5rem;
     display: block;
@@ -200,6 +253,9 @@ table {
       width: 60%;
       text-align: left;
       //display: none;
+      &:hover figure {
+        opacity: 1;
+        }
     }
     li:nth-child(2) { //type prosjekt
      float: left;
@@ -230,6 +286,7 @@ img {
 }
 
 .project-images {
+  display:none;
   padding-top: 10rem;
   position: relative;
   z-index:999;
@@ -246,8 +303,6 @@ img {
           //margin-left:50vmin;
           //margin-top: 100vmin;
           //margin-left:0vw;
-
-
         /*
 
         &:nth-child(2) {
@@ -292,6 +347,24 @@ img {
 
 
 
+.featured {
+    figure {
+      opacity:0;
+      padding:0;
+      margin:0;
+      z-index:9999;
+      position: fixed;
+      top: 25vmin;
+      left: 25vmin;
+      right: 25vmin;
+      bottom: 25vmin;
+      //max-height:100%;
+      pointer-events:none;
+      }
+    li:hover figure {
+      opacity: 1;
+      }
+  }
 
 
 @media screen and (min-width: 40em) {
