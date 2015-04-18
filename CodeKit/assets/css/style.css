@@ -713,10 +713,10 @@ li {
 }
 
 .right-page {
+  z-index: 1;
   position: fixed;
   padding: 2vw;
   width: 50%;
-  float: right;
   background: #000;
   color: #fff;
   min-height: 100vh;
@@ -815,17 +815,26 @@ table td {
   color: #fff;
   margin-top: 30vmin;
 }
+.project-list a {
+  color: #fff;
+}
 .project-list figure {
   opacity: 0;
   padding: 0;
   margin: 0;
-  z-index: 9999;
+  z-index: -999;
   position: fixed;
-  top: 30vmin;
-  left: 30vmin;
-  right: 30vmin;
-  bottom: 30vmin;
+  overflow: hidden;
+  top: 15vmin;
+  left: 10vmin;
+  bottom: 10vmin;
+  right: 10vmin;
+  right: 50vw;
   pointer-events: none;
+}
+.project-list figure img {
+  min-height: 70vmin;
+  width: auto;
 }
 .project-list ul {
   display: block;
@@ -920,13 +929,12 @@ img {
 .featured figure {
   opacity: 0;
   padding: 0;
-  margin: 0;
   z-index: 9999;
   position: fixed;
-  top: 20vmin;
-  left: 20vmin;
-  right: 20vmin;
-  bottom: 20vmin;
+  width: 60%;
+  left: 50%;
+  top: -100vh;
+  margin: 0 0 0 -30%;
   pointer-events: none;
 }
 .featured li:hover figure {

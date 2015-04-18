@@ -117,10 +117,11 @@ li {
 }
 
 .right-page {
+  z-index:1;
   position: fixed;
   padding:$padding;
   width:50%;
-  float:right;
+  //float:right;
   background: #000;
   color:#fff;
   min-height:100vh;
@@ -229,20 +230,52 @@ table {
 
 .project-list {
   color: #fff;
+  //z-index: 999;
   margin-top: 30vmin;
-  figure {
-    opacity:0;
-    padding:0;
-    margin:0;
-    z-index:9999;
-    position: fixed;
-    top: 30vmin;
-    left: 30vmin;
-    right: 30vmin;
-    bottom: 30vmin;
-    //max-height:100%;
-    pointer-events:none;
+  a {
+    color:#fff;
+    &:hover {
+      //border: 2px solid #fff;
+      //color:#000;
+    }
   }
+    figure {
+      opacity:0;
+      padding:0;
+      margin:0;
+      z-index:-999;
+      position: fixed;
+      //top: 0;
+      //left: 30vmin;
+      //right: 30vmin;
+      //bottom: 30vmin;
+      //max-height:100%;
+      //width:60%;
+      //left:50%;
+      //margin: 0 0 0 -30%;
+      //width:50vw;
+      //left:0vmin;
+      //top:0vmin;
+      //bottom:0vmin;
+      overflow:hidden;
+
+      //min-width:50vmin;
+      //min-height: 50vmin;
+      top:15vmin;
+      left:10vmin;
+      bottom:10vmin;
+      right:10vmin;
+      right:50vw;
+      //margin: 0 0 0 -25vmin;
+
+      pointer-events:none;
+         img {
+          min-height: 70vmin;
+          width:auto;
+          //margin-left:-25vmin;
+        }
+    }
+
 
   ul {
     //padding: 0 1.5rem;
@@ -369,13 +402,17 @@ img {
     figure {
       opacity:0;
       padding:0;
-      margin:0;
+      //margin:0;
       z-index:9999;
       position: fixed;
-      top: 20vmin;
-      left: 20vmin;
-      right: 20vmin;
-      bottom: 20vmin;
+      width:60%;
+      left:50%;
+      top:-100vh;
+      margin: 0 0 0 -30%;
+      //top: 20vmin;
+      //left: 20vmin;
+      //right: 20vmin;
+      //bottom: 20vmin;
       //max-height:100%;
       pointer-events:none;
       }
