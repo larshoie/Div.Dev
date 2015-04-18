@@ -2,3 +2,5 @@
 *.css.map
 config.codekit
 .DS_Store
+
+*.codekit
