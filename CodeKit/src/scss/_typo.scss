@@ -376,13 +376,19 @@ img {
 
 
 
-.about {
+.ingress {
   @extend h1;
+  position: static;
+  display: block;
   font-size: 6.5vw;
   -webkit-text-stroke: 0.2rem #000;
-  padding-bottom:10vh;
+  margin-bottom:10vh;
 }
 
+.experience {
+  //margin-top: 2rem;
+  display: block;
+}
 
 
 
