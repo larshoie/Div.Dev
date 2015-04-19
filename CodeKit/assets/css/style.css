@@ -692,11 +692,10 @@ a:hover, .active {
   font-size: 20vw;
   left: 0;
   right: 0;
-  top: 30%;
+  top: 40%;
   bottom: 0;
   text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 0.4vw yellow;
+  -webkit-text-stroke: 2px #000;
 }
 
 li {
@@ -726,6 +725,10 @@ li {
   min-height: 100vh;
   top: 0;
   right: 0;
+}
+
+.frontpage span.title {
+  display: none;
 }
 
 header {
@@ -778,8 +781,33 @@ header .right {
   color: #fff;
   background: #000;
 }
-header li {
+header .right a {
+  color: #fff;
+  background: #000;
+  padding-right: 1vmin;
+}
+header .right a:hover {
+  border-color: #fff;
+  background: #000;
+}
+header .right span.title {
+  display: none;
+  float: right;
+  background: #000;
+  padding-left: 1vmin;
+  -webkit-text-stroke: 0.03rem #fff;
+  -webkit-text-fill-color: transparent;
+}
+header .right span:before {
+  width: 44vw;
+  right: 3vw;
+  height: 2vw;
+  content: '';
+  border-bottom: 0.35vmin solid #fff;
   display: inline;
+  position: absolute;
+  z-index: -1;
+  top: 1.5vw;
 }
 
 h1, .featured li, .ingress {
@@ -846,7 +874,6 @@ table td {
 }
 .project-list ul {
   display: block;
-  font-size: 2vw;
   letter-spacing: 0.15rem;
 }
 .project-list ul li {
@@ -880,10 +907,6 @@ table td {
 img {
   width: 100%;
   height: auto;
-}
-
-.about {
-  margin-top: 30vmin;
 }
 
 .project-images {
@@ -949,36 +972,53 @@ img {
   opacity: 1;
 }
 
-.about, h2 {
+.about {
+  margin-top: 30vmin;
+}
+.about h2 {
   font-size: 1.5vw;
-  padding-bottom: 1rem;
+  padding-bottom: 2.5vmin;
 }
 
 .ingress {
   position: static;
   display: block;
-  line-height: 1.23;
+  line-height: 1.255;
+  line-height: 8.35vw;
   font-size: 6.6vw;
   margin-top: -1.9vw;
   -webkit-text-stroke: 0.2rem #000;
-  margin-bottom: 10vh;
+  padding-bottom: 10vmin;
+}
+
+.contact {
+  padding-bottom: 10vmin;
 }
 
 .approach {
   display: none;
 }
 
-.approach, .education {
+.experience, .education {
   width: 50%;
-  padding-bottom: 10vh;
+  font-size: 1.5vw;
+  padding-bottom: 1rem;
+  float: left;
 }
 
-.experience, .contact {
-  width: 50%;
+/* .experience {
+  //margin-top: 2rem;
+  //display: block;
   float: left;
   padding-bottom: 10rem;
+  //transform: rotate(25deg);
 }
 
+
+
+.education li {
+  //padding-bottom: 1rem;
+} */
 .project-info {
   padding: 2vw;
   min-height: 100vh;
@@ -991,6 +1031,25 @@ img {
   background: #000;
   color: #fff;
   z-index: 0;
+}
+
+.meta {
+  float: left;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.project-title {
+  float: left;
+  -webkit-text-stroke: 0.001rem #fff;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+  line-height: 1.2;
+}
+
+time {
+  float: left;
+  margin-left: 1rem;
 }
 
 .project-main-photo {
@@ -1018,7 +1077,7 @@ img {
   padding: 0;
   margin: 0;
   margin-top: 60vmin;
-  padding-bottom: 5vmin;
+  padding-bottom: 10vmin;
 }
 
 /* .half {
@@ -1034,31 +1093,21 @@ img {
   float: none;
 }
 
-.layover {
-  z-index: 9999999 !important;
-  position: relative;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-}
-
 .half {
   width: 96vw;
   margin: 0 auto;
 }
 
 .half--left {
-  width: 48vw;
+  width: 50vw;
   float: left;
+  padding-left: 2vw;
 }
 
 .half--right {
-  width: 48vw;
-  float: left;
+  width: 50vw;
+  float: right;
+  padding-right: 2vw;
 }
 
 .project-background-white {
@@ -1070,6 +1119,12 @@ img {
   top: 0;
   z-index: -1;
 }
+.project-background-white a {
+  position: absolute;
+  left: 2vw;
+  bottom: 2vmin;
+  color: #000;
+}
 
 .project-background-black {
   height: 100%;
@@ -1079,6 +1134,15 @@ img {
   right: 0;
   top: 0;
   z-index: -1;
+}
+.project-background-black a {
+  position: absolute;
+  right: 2vw;
+  bottom: 2vmin;
+  color: #fff;
+}
+.project-background-black ahover {
+  border-color: #fff;
 }
 
 .hide {
