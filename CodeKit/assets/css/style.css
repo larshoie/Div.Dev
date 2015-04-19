@@ -971,4 +971,62 @@ img {
   padding-bottom: 10rem;
 }
 
+.project-info {
+  padding: 2vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  padding-top: 32.5vmin;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  z-index: 0;
+}
+
+.project-main-photo {
+  padding: 0;
+  margin: 0;
+  z-index: -999;
+  position: fixed;
+  overflow: hidden;
+  top: 15vmin;
+  left: 10vmin;
+  bottom: 10vmin;
+  right: 50vw;
+  pointer-events: none;
+}
+.project-main-photo img {
+  min-height: 70vmin;
+  width: auto;
+}
+
+.project {
+  padding: 0;
+  margin: 0;
+  margin-top: 60vmin;
+  padding-top: 5vw;
+  position: relative;
+  z-index: 99;
+  width: 100vw;
+  float: left;
+  background-color: yellow;
+}
+
+/* .half {
+  width: 100vmin;
+  float:none;
+  margin: 5vmin auto;
+} */
+.full {
+  width: 91vw;
+  margin: auto;
+}
+
+.half {
+  width: 91vw;
+  margin: 5vmin auto;
+}
+
 /*# sourceMappingURL=style.css.map */
