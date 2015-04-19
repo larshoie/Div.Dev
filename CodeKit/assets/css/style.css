@@ -621,6 +621,10 @@ body {
   margin-top: 20px;
 }
 
+figure {
+  margin: 0;
+}
+
 /* &:hover *{
   z-index: 99999;
   background: red;
@@ -729,13 +733,15 @@ header {
   z-index: 1;
 }
 header .left {
-  z-index: 1;
+  z-index: 999;
   width: 50vw;
   color: #000;
+  background: #fff;
   left: 0;
   display: block;
   position: fixed;
   padding: 2vw;
+  padding-bottom: 8.5vmin;
   /* li:nth-child(1) { //navn på prosjekt
     float: left;
     width: 60%;
@@ -767,8 +773,10 @@ header .right {
   display: block;
   position: fixed;
   padding: 2vw;
+  padding-bottom: 8.5vmin;
   z-index: 99999;
   color: #fff;
+  background: #000;
 }
 header li {
   display: inline;
@@ -1003,15 +1011,13 @@ img {
 }
 
 .project {
-  padding: 0;
-  margin: 0;
-  margin-top: 60vmin;
-  padding-top: 5vw;
   position: relative;
   z-index: 99;
   width: 100vw;
   float: left;
-  background-color: yellow;
+  padding: 0;
+  margin: 0;
+  margin-top: 60vmin;
 }
 
 /* .half {
@@ -1020,13 +1026,38 @@ img {
   margin: 5vmin auto;
 } */
 .full {
-  width: 91vw;
-  margin: auto;
+  width: 96vw;
+  padding: 0;
+  margin: 0;
+  margin: 0 auto 2vmin auto;
+  float: none;
+  position: relative;
+  z-index: 9999999;
 }
 
 .half {
-  width: 91vw;
-  margin: 5vmin auto;
+  width: 96vw;
+  margin: 2vmin auto;
+}
+
+.project-background-white {
+  height: 100%;
+  width: 50vw;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.project-background-black {
+  height: 100%;
+  width: 50vw;
+  background: #000;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */

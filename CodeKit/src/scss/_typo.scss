@@ -1,5 +1,9 @@
 $padding:2vw;
 
+figure {
+  margin:0;
+}
+
 /* &:hover *{
   z-index: 99999;
   background: red;
@@ -140,13 +144,17 @@ header {
   z-index: 1;
 
   .left {
-    z-index: 1;
+    z-index: 999;
     width: 50vw;
     color: #000;
+    background: #fff;
     left:0;
     display:block;
     position:fixed;
     padding:$padding;
+    padding-bottom: 8.5vmin;
+    //background: red;
+
     a {
       color: #000;
      }
@@ -179,8 +187,10 @@ header {
     display:block;
     position:fixed;
     padding:$padding;
+    padding-bottom: 8.5vmin;
     z-index: 99999;
     color:#fff;
+    background: #000;
   }
   li {
     display: inline;
@@ -529,16 +539,15 @@ img {
 }
 
 .project {
-  padding:0;
-  margin:0;
-  margin-top: 60vmin;
-  padding-top:5vw;
   position:relative;
   z-index:99;
   width: 100vw;
   float:left;
-  background-color: yellow;
-
+  //background-color: yellow;
+  padding:0;
+  margin:0;
+  margin-top: 60vmin;
+  //padding-top:5vw;
   //pointer-events:none;
 }
 
@@ -550,15 +559,41 @@ img {
 
 .full {
   //width: 100vw;
-  width: 91vw;
-  margin: auto;
-  //float:none;
+  width: 96vw;
+  padding:0;
+  margin:0;
+  margin: 0 auto 2vmin auto;
+  //width: 91vw;
+  //margin: auto;
+  float:none;
+  position:relative;
+  z-index:9999999;
   //margin-bottom: 5vmin;
   //@extend .half;
 }
 
 .half {
-  width: 91vw;
+  width: 96vw;
   //float:left;
-  margin: 5vmin auto;
+  margin: 2vmin auto;
+}
+
+
+.project-background-white {
+  height:100%;
+  width:50vw;
+  background:#fff;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+}
+.project-background-black {
+  height:100%;
+  width:50vw;
+  background:#000;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:-1;
 }
