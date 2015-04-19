@@ -1,5 +1,9 @@
-@import "normalize";
 @import "variables";
-@import "susy";
+@import "normalize";
+@import "normalize-opentype";
+@import "base";
+@import "header";
+@import "about";
+@import "projects";
+@import "single-project";
 @import "grid";
-@import "typo";

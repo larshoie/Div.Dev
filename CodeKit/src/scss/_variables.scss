@@ -1,6 +1,21 @@
-$light: lightyellow;
-$dark: #000;
+// colors
+   $light: #fff;
+   $dark: #000;
 
-body {
-    background: $light;
-}
+// universal padding (grid etc.)
+   $padding:2vw;
+
+// Font-stacks
+   $sans-serif:"RT Obligat", "Helvetica Neue", sans-serif;
+   $serif:"Times New Roman", serif;
+
+
+   //Alternativer:
+
+   //"Mineral",
+   //"Times NR MT Pro",
+   //"Larish Alte",
+   //"Apercu",
+   //"Times New Roman",
+   //serif,
+   //"Helvetica Neue", sans-serif;

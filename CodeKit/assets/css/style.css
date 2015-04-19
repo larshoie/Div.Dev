@@ -6,8 +6,6 @@
  *    without disabling user zoom.
  */
 html {
-  font-family: sans-serif;
-  /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
@@ -123,9 +121,9 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-h1, .featured li, .ingress {
+h1, .ingress, .featured li {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 /**
@@ -184,7 +182,7 @@ svg:not(:root) {
  * Address margin not present in IE 8/9 and Safari.
  */
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 /**
@@ -394,277 +392,194 @@ th {
   padding: 0;
 }
 
-body {
-  background: lightyellow;
+/*! normalize-opentype.css v0.2.4 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
+/**
+ * 1. Inherit style issues with custom selections, per robsterlini.co.uk/journal/opentype-and-selection-dont-mix
+ * 2. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
+ *    Turn off all other ligatures, tabular, lining numerals, and alternates
+      Uses same settings for tables
+ * 3. Hard-codes fallback text selection for issue #18, color is Chrome’s per via http://stackoverflow.com/a/16094931/864799
+ */
+::-moz-selection{
+  color: inherit;
+  /* 1. */
+  text-shadow: inherit;
+  /* 2. */
+  background-color: #ACCEF7;
+  /* 3. */
+}
+::selection {
+  color: inherit;
+  /* 1. */
+  text-shadow: inherit;
+  /* 2. */
+  background-color: #ACCEF7;
+  /* 3. */
 }
 
-.flexGrid {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
+html,
+body,
+table {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  /* 2. */
 }
 
-.flexGrid-col {
-  float: left;
+/* Headings
+========================================================================== */
+/**
+ * 1. Turn on discretionary ligatures for larger headings
+ */
+h1, .ingress, .featured li,
+h2,
+h3 {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+  /* 1. */
 }
 
-.flexGrid-col + .flexGrid-col {
-  margin-left: 2%;
+/* Text-level semantics
+========================================================================== */
+/**
+ * 1. Change all letters to uppercase
+ * 2. Turn on small caps for upper and lowercase letters
+ */
+abbr {
+  text-transform: uppercase;
+  /* 1 */
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+  /* 2 */
 }
 
-.flexGrid-col_1of12 {
-  width: 6.5%;
+/*
+ * TODO: Turn on diagonal fractions where appropriate
+ */
+time {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
 }
 
-.flexGrid-col_2of12 {
-  width: 15.0%;
+/*
+ * 1. Turn off kerning and ligatures,
+ *    Turn on lining, tabular numerals, slashed zero
+ */
+pre,
+kbd,
+samp,
+code {
+  -webkit-font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+     -moz-font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+          font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  /* 1. */
 }
 
-.flexGrid-col_3of12 {
-  width: 23.5%;
+/**
+ * 1. Turn on proper supercript numerals
+ */
+sup {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
+  /* 1. */
 }
 
-.flexGrid-col_4of12 {
-  width: 32%;
+/**
+ * 1. Turn on proper subscript numerals
+ */
+sub {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
+  /* 1. */
 }
 
-.flexGrid-col_5of12 {
-  width: 40.5%;
+/* Grouping content
+========================================================================== */
+/**
+ * TODO: Adds proper bullets
+ */
+/*
+ * TODO:
+ * 1. Adds counters for lists
+ * 2. Use proper numerals for lists
+ */
+/**
+ * Adds proper small caps
+ */
+/**
+ * TODO: scmp, sc2c, pnum, case sensitive forms for postal codes
+ */
+/* Forms
+========================================================================== */
+/**
+ * 1. Turns on lining, proportional numerals without clarified zeroes
+ * TODO: Additional input modes https://developer.mozilla.org/en/docs/Web/HTML/Element/Input#attr-inputmode
+ */
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="range"],
+input[type="tel"],
+input[type="week"] {
+  -webkit-font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+     -moz-font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+          font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+  /* 1. */
 }
 
-.flexGrid-col_6of12 {
-  width: 49%;
-}
-
-.flexGrid-col_7of12 {
-  width: 57.5%;
-}
-
-.flexGrid-col_8of12 {
-  width: 66%;
-}
-
-.flexGrid-col_9of12 {
-  width: 74.5%;
-}
-
-.flexGrid-col_10of12 {
-  width: 83.0%;
-}
-
-.flexGrid-col_11of12 {
-  width: 91.5%;
-}
-
-.flexGrid-col_12of12 {
-  width: 100%;
-}
-
-@media screen and (max-width: 700px) {
-  .flexGrid {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .flexGrid-col + .flexGrid-col {
-    margin-left: 0;
-  }
-
-  .flexGrid-col_1of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo1 {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  .flexGrid-col_2of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo2 {
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-
-  .flexGrid-col_3of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo3 {
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-        -ms-flex-order: 3;
-            order: 3;
-  }
-
-  .flexGrid-col_4of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo4 {
-    -webkit-box-ordinal-group: 5;
-    -webkit-order: 4;
-        -ms-flex-order: 4;
-            order: 4;
-  }
-
-  .flexGrid-col_5of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo5 {
-    -webkit-box-ordinal-group: 6;
-    -webkit-order: 5;
-        -ms-flex-order: 5;
-            order: 5;
-  }
-
-  .flexGrid-col_6of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo6 {
-    -webkit-box-ordinal-group: 7;
-    -webkit-order: 6;
-        -ms-flex-order: 6;
-            order: 6;
-  }
-
-  .flexGrid-col_7of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo7 {
-    -webkit-box-ordinal-group: 8;
-    -webkit-order: 7;
-        -ms-flex-order: 7;
-            order: 7;
-  }
-
-  .flexGrid-col_8of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo8 {
-    -webkit-box-ordinal-group: 9;
-    -webkit-order: 8;
-        -ms-flex-order: 8;
-            order: 8;
-  }
-
-  .flexGrid-col_9of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo9 {
-    -webkit-box-ordinal-group: 10;
-    -webkit-order: 9;
-        -ms-flex-order: 9;
-            order: 9;
-  }
-
-  .flexGrid-col_10of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo10 {
-    -webkit-box-ordinal-group: 11;
-    -webkit-order: 10;
-        -ms-flex-order: 10;
-            order: 10;
-  }
-
-  .flexGrid-col_11of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo11 {
-    -webkit-box-ordinal-group: 12;
-    -webkit-order: 11;
-        -ms-flex-order: 11;
-            order: 11;
-  }
-
-  .flexGrid-col_12of12 {
-    width: 100%;
-  }
-
-  .flexGrid-col_moveTo12 {
-    -webkit-box-ordinal-group: 13;
-    -webkit-order: 12;
-        -ms-flex-order: 12;
-            order: 12;
-  }
-}
-body {
-  font-family: sans-serif;
-  padding: 50px;
-}
-
-.flexGrid-col {
-  padding: 20px;
-  background: dodgerBlue;
-}
-
-.flexGrid + .flexGrid {
-  margin-top: 20px;
-}
-
-figure {
-  margin: 0;
-}
-
-/* &:hover *{
-  z-index: 99999;
-  background: red;
-} */
-.container:before,
-.container:after {
-  content: "";
-  display: table;
-}
-
-.container:after {
-  clear: both;
-}
-
-.container {
-  zoom: 1;
-  /* For IE 6/7 (trigger hasLayout) */
+/* Localisation
+========================================================================== */
+/* Tables
+========================================================================== */
+/**
+ * 1. Turns on tabular, lining numerals and slashed zero
+ */
+tbody,
+caption {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+     -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  /* 1. */
 }
 
 body {
   overflow-x: hidden;
   box-sizing: border-box;
-  font-family: "RT Obligat", "Mineral", "Times NR MT Pro", "Larish Alte", "Apercu", "comic sans MS", "mistral", "Times New Roman", Serif;
+  margin: 0 auto;
+  background: #fff;
+  font-family: "RT Obligat", "Helvetica Neue", sans-serif;
+  font-style: condenced;
+  letter-spacing: 0.05rem;
+  line-height: 1.4;
+  font-size: 2vw;
+  color: #000;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern";
+  /* optional: for older browsers */
+  -moz-font-feature-settings: "kern=1";
+  /* pre-Firefox 14+ */
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern=1";
-  font-feature-settings: "kern" 1;
+  /* Firefox 14+ */
+  font-feature-settings: "kern";
+  /* standard */
   -webkit-font-kerning: normal;
      -moz-font-kerning: normal;
           font-kerning: normal;
-  font-size: 2vw;
-  line-height: 1.4;
-  color: #000;
-  letter-spacing: 0.05rem;
-  padding: 0;
-  margin: 0;
-  margin: auto;
-  background: #fff;
+  /* Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+*/
+  text-rendering: optimizeLegibility;
+  /* optional: for older browsers */
+  -webkit-font-variant-ligatures: common-ligatures;
+  /* for iOS and Safari 6 */
+  -moz-font-variant-ligatures: common-ligatures;
+       font-variant-ligatures: common-ligatures;
+  /* for up-to-date browsers, including IE10 and Opera 21 */
 }
 
 *, *:before, *:after {
@@ -685,21 +600,25 @@ a:hover, .active {
   border-bottom: 0.15rem solid #000;
 }
 
-.logo {
-  display: none;
-  position: fixed;
-  z-index: -1;
-  font-size: 20vw;
-  left: 0;
-  right: 0;
-  top: 40%;
-  bottom: 0;
-  text-align: center;
-  -webkit-text-stroke: 2px #000;
-}
-
 li {
   list-style: none;
+}
+
+table {
+  color: #fff;
+}
+table td {
+  padding: 0 1.5rem;
+  font-size: 2vw;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .left-page {
@@ -725,6 +644,19 @@ li {
   min-height: 100vh;
   top: 0;
   right: 0;
+}
+
+.logo {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  font-size: 20vw;
+  left: 0;
+  right: 0;
+  top: 40%;
+  bottom: 0;
+  text-align: center;
+  -webkit-text-stroke: 2px #000;
 }
 
 .frontpage span.title {
@@ -755,7 +687,7 @@ header .left {
    float: left;
    width: 30%;
    color: transparent;
-   -webkit-text-stroke: 0.05rem #fff;
+   -webkit-text-stroke: 0.05rem $light;
    //display: none;
   }
   li:last-child { //year
@@ -763,7 +695,7 @@ header .left {
     width: 10%;
     text-align: left;
     color: transparent;
-    -webkit-text-stroke: 0.05rem #fff;
+    -webkit-text-stroke: 0.05rem $light;
     //display: none;
   } */
 }
@@ -810,7 +742,7 @@ header .right span:before {
   top: 1.5vw;
 }
 
-h1, .featured li, .ingress {
+h1, .ingress, .featured li {
   position: relative;
   top: 15rem;
   font-size: 9vw;
@@ -818,35 +750,71 @@ h1, .featured li, .ingress {
   padding: 0;
   margin: -0.253vw;
   color: #000;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: transparent;
   /* FF/IE Fuck-fix... Override color (regardless of order) */
-  -webkit-text-stroke-width: 0.002re;
+  -webkit-text-stroke-width: 0.002rem;
   -webkit-text-stroke-color: #000;
 }
 
-.number-projects {
-  font-variant-position: super;
-  -moz-font-feature-settings: "sups";
-  -ms-font-feature-settings: "sups";
-  -webkit-font-feature-settings: "sups";
-  font-feature-settings: "sups";
-  font-size: 4vw;
-  position: relative;
-  display: inline;
-  bottom: 3.5vw;
-  margin-left: -1.3vw;
-  color: #fff;
-  -webkit-text-stroke: 0 #fff;
+/* .number-projects {
+font-variant-position: super;
+-moz-font-feature-settings: "sups";
+-ms-font-feature-settings: "sups";
+-webkit-font-feature-settings: "sups";
+font-feature-settings: "sups";
+font-size: 4vw;
+position:relative;
+display:inline;
+bottom:3.5vw;
+margin-left: -1.3vw;
+color: $light;
+-webkit-text-stroke: 0 $light;
+} */
+.about {
+  margin-top: 30vmin;
+}
+.about h2 {
+  font-size: 1.5vw;
+  padding-bottom: 2.5vmin;
 }
 
-table {
-  color: #fff;
-}
-table td {
-  padding: 0 1.5rem;
-  font-size: 2vw;
+.ingress {
+  position: static;
+  display: block;
+  line-height: 1.255;
+  line-height: 8.35vw;
+  font-size: 6.6vw;
+  margin-top: -1.9vw;
+  -webkit-text-stroke: 0.2rem #000;
+  padding-bottom: 10vmin;
 }
 
+.contact {
+  padding-bottom: 10vmin;
+}
+
+.approach {
+  display: none;
+}
+
+.experience, .education {
+  width: 50%;
+  font-size: 1.5vw;
+  padding-bottom: 1rem;
+  float: left;
+}
+
+/* .experience {
+  //margin-top: 2rem;
+  //display: block;
+  float: left;
+  padding-bottom: 10rem;
+  //transform: rotate(25deg);
+}
+
+.education li {
+  //padding-bottom: 1rem;
+} */
 .project-list {
   color: #fff;
   margin-top: 30vmin;
@@ -904,27 +872,25 @@ table td {
   color: #999;
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
+/*
 .project-images {
-  display: none;
+  display:none;
   padding-top: 10rem;
   position: relative;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
+  z-index:999;
+  top:0;
+  left:0;
+  right:0;
   opacity: 1;
-}
-.project-images li {
-  float: none;
-  margin: 100vmin auto;
-  width: 100vmin;
-        /*
 
+  //opacity: 0.8;
+        li {
+          float:none;
+          margin: 100vmin auto;
+          width: 100vmin;
+          //margin-left:50vmin;
+          //margin-top: 100vmin;
+          //margin-left:0vw;
         &:nth-child(2) {
           padding:0;
           width: 100vw;
@@ -947,12 +913,14 @@ img {
           margin-top: 100vh;
         }
 
-        */
-}
-.project-images figcaption {
-  display: none;
-}
+    }
 
+
+
+  figcaption {
+    display:none;
+  }
+} */
 .featured li {
   color: transparent;
   -webkit-text-stroke: 0.2rem #fff;
@@ -972,53 +940,6 @@ img {
   opacity: 1;
 }
 
-.about {
-  margin-top: 30vmin;
-}
-.about h2 {
-  font-size: 1.5vw;
-  padding-bottom: 2.5vmin;
-}
-
-.ingress {
-  position: static;
-  display: block;
-  line-height: 1.255;
-  line-height: 8.35vw;
-  font-size: 6.6vw;
-  margin-top: -1.9vw;
-  -webkit-text-stroke: 0.2rem #000;
-  padding-bottom: 10vmin;
-}
-
-.contact {
-  padding-bottom: 10vmin;
-}
-
-.approach {
-  display: none;
-}
-
-.experience, .education {
-  width: 50%;
-  font-size: 1.5vw;
-  padding-bottom: 1rem;
-  float: left;
-}
-
-/* .experience {
-  //margin-top: 2rem;
-  //display: block;
-  float: left;
-  padding-bottom: 10rem;
-  //transform: rotate(25deg);
-}
-
-
-
-.education li {
-  //padding-bottom: 1rem;
-} */
 .project-info {
   padding: 2vw;
   min-height: 100vh;
@@ -1080,36 +1001,6 @@ time {
   padding-bottom: 10vmin;
 }
 
-/* .half {
-  width: 100vmin;
-  float:none;
-  margin: 5vmin auto;
-} */
-.full {
-  width: 96vw;
-  padding: 0;
-  margin: 0;
-  margin: 0 auto;
-  float: none;
-}
-
-.half {
-  width: 96vw;
-  margin: 0 auto;
-}
-
-.half--left {
-  width: 50vw;
-  float: left;
-  padding-left: 2vw;
-}
-
-.half--right {
-  width: 50vw;
-  float: right;
-  padding-right: 2vw;
-}
-
 .project-background-white {
   height: 100%;
   width: 50vw;
@@ -1147,6 +1038,30 @@ time {
 
 .hide {
   display: none;
+}
+
+.full {
+  width: 96vw;
+  padding: 0;
+  margin: 0 auto;
+  float: none;
+}
+
+.half {
+  width: 96vw;
+  margin: 0 auto;
+}
+
+.half--left {
+  width: 50vw;
+  float: left;
+  padding-left: 2vw;
+}
+
+.half--right {
+  width: 50vw;
+  float: right;
+  padding-right: 2vw;
 }
 
 /*# sourceMappingURL=style.css.map */

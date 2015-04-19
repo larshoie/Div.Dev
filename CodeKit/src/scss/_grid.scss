@@ -1,67 +1,25 @@
-
-@mixin flexGrid($count,$gutter){ 
-  
-  // calculates single grid item width
-  $oneGridItemWidth: 100 / $count; 
-  
-  //calculates excess margin equally to the column count
-  $extra: $gutter / $count;
-  .flexGrid { 
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .flexGrid-col {
-    float: left;
-  }
-  
-  .flexGrid-col + .flexGrid-col { margin-left: unquote($gutter + '%'); }
-  
-  //The loop that creates all of your grid item classes and widths
-  @for $i from 1 through $count {
-      .flexGrid-col_#{$i}of#{$count} {
-        width: unquote(($oneGridItemWidth * $i) - $gutter + ($extra * $i) + '%');
-      }
-  }
-    
-  //Flex Grid Breakpoint Styling
-  @media screen and (max-width:700px) {
-    .flexGrid { 
-      flex-direction: column; 
-    }
-
-    .flexGrid-col + .flexGrid-col { 
-      margin-left: 0; 
-    }
-
-    
-    @for $i from 1 through $count {
-      .flexGrid-col_#{$i}of#{$count} {
-        width: 100%;
-      }
-      
-      //Loop to create orders for you to rearrange cols on breakpoints 
-      .flexGrid-col_moveTo#{$i} {
-        order: #{$i}; 
-      }
-    }
-  }
+.full {
+  width: 100vw - $padding * 2;
+  padding:0;
+  margin: 0 auto;
+  float:none;
 }
 
-
-// Defining Grid
-@include flexGrid(12,2); //column count, gutter
-
-
-//Presentation Only
-body {
-  font-family: sans-serif;
-  padding: 50px;
+.half {
+  width: 100vw - $padding * 2;
+  margin: 0 auto;
 }
 
-.flexGrid-col {
-  padding: 20px;
-  background: dodgerBlue;
+.half--left {
+  width: 50vw;
+  float:left;
+  padding-left:$padding;
+  //height:100%;
 }
 
-.flexGrid + .flexGrid { margin-top: 20px; }
+.half--right {
+  width: 50vw;
+  float:right;
+  padding-right:$padding;
+  //height:100%;
+}

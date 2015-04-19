@@ -1,0 +1,146 @@
+.featured {
+    li {
+      @extend h1;
+      color: transparent;
+      -webkit-text-stroke: 0.2rem $light;
+      //width:100%;
+      //height:30%;
+    }
+    figure {
+      opacity:0;
+      padding:0;
+      //margin:0;
+      z-index:9999;
+      position: fixed;
+      width:60%;
+      left:50%;
+      top:-100vh;
+      margin: 0 0 0 -30%;
+      //top: 20vmin;
+      //left: 20vmin;
+      //right: 20vmin;
+      //bottom: 20vmin;
+      //max-height:100%;
+      pointer-events:none;
+      }
+    li:hover figure {
+      opacity: 1;
+      }
+  }
+
+.project-info {
+  //@extend .right-page;
+  //@extend .project-list;
+  padding: $padding;
+  min-height: 100vh;
+  position:fixed;
+  top:0;
+  right:0;
+  width:50vw;
+  padding-top:32.5vmin;
+  overflow: hidden;
+  background: $dark;
+  color: $light;
+  z-index: 0;
+  &:hover {
+  //z-index:999;
+  }
+}
+
+.meta {
+  float:left;
+  width:100%;
+  padding-bottom: 2rem;
+}
+
+.project-title {
+  //float:left;
+  //color:$light;
+  //position:absolute;
+  //z-index:9999;
+  //left:50vw + $padding;
+  float:left;
+  -webkit-text-stroke: 0.001rem $light;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+  line-height:1.2;
+}
+
+time {
+  //display:inline-block;
+  float:left;
+  margin-left: 1rem;
+}
+
+.project-main-photo {
+  padding:0;
+  margin:0;
+  z-index:-999;
+  position: fixed;
+  overflow:hidden;
+  top:15vmin;
+  left:10vmin;
+  bottom:10vmin;
+  //right:10vmin;
+  right:50vw;
+  //margin: 0 0 0 -25vmin;
+  pointer-events:none;
+     img {
+      min-height: 70vmin;
+      width:auto;
+      //margin-left:-25vmin;
+    }
+
+}
+
+.project {
+  position:relative;
+  z-index:99;
+  width: 100vw;
+  float:left;
+  //background-color: yellow;
+  padding:0;
+  margin:0;
+  margin-top: 60vmin;
+  //padding-top:5vw;
+  padding-bottom:10vmin;
+  //pointer-events:none;
+}
+
+
+.project-background-white {
+  height:100%;
+  width:50vw;
+  background:$light;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  a {
+    position:absolute;
+    left:$padding;
+    bottom:2vmin;
+    color: $dark;
+  }
+}
+.project-background-black {
+  height:100%;
+  width:50vw;
+  background:$dark;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:-1;
+  a {
+    position:absolute;
+    right:$padding;
+    bottom:2vmin;
+    color: $light;
+    &hover {border-color:$light;}
+  }
+
+}
+
+.hide {
+  display: none;
+}

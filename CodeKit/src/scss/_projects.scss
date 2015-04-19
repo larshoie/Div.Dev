@@ -1,0 +1,144 @@
+.project-list {
+  color: $light;
+  //z-index: 999;
+  margin-top: 30vmin;
+  a {
+    color:$light;
+    &:hover {
+      //border: 2px solid $light;
+      //color:$dark;
+    }
+  }
+    figure {
+      opacity:0;
+      padding:0;
+      margin:0;
+      z-index:-999;
+      position: fixed;
+      //top: 0;
+      //left: 30vmin;
+      //right: 30vmin;
+      //bottom: 30vmin;
+      //max-height:100%;
+      //width:60%;
+      //left:50%;
+      //margin: 0 0 0 -30%;
+      //width:50vw;
+      //left:0vmin;
+      //top:0vmin;
+      //bottom:0vmin;
+      overflow:hidden;
+
+      //min-width:50vmin;
+      //min-height: 50vmin;
+      top:15vmin;
+      left:10vmin;
+      bottom:10vmin;
+      right:10vmin;
+      right:50vw;
+      //margin: 0 0 0 -25vmin;
+
+      pointer-events:none;
+         img {
+          min-height: 70vmin;
+          width:auto;
+          //margin-left:-25vmin;
+        }
+    }
+
+
+  ul {
+    //padding: 0 1.5rem;
+    display: block;
+    //font-size: 2vw;
+    letter-spacing: 0.15rem;
+    li {
+      display: inline;
+    }
+    li:nth-child(1) { //navn på prosjekt
+      float: left;
+      width: 60%;
+      text-align: left;
+      //display: none;
+      &:hover figure {
+        opacity: 1;
+        }
+    }
+    li:nth-child(2) { //type prosjekt
+     float: left;
+     margin-right:5%;
+     width: 25%;
+     text-align: left;
+     //color: transparent;
+     //-webkit-text-stroke: 0.05rem $light;
+     //display: none;
+    }
+    li:last-child { //year
+      width: 10%;
+      float: right;
+      text-align: left;
+      //color: transparent;
+      //-webkit-text-stroke: 0.05rem $light;
+      //display: none;
+    }
+  }
+}
+
+.coming-soon {
+  text-decoration: line-through;
+  color: #999;
+}
+
+
+
+
+
+/*
+.project-images {
+  display:none;
+  padding-top: 10rem;
+  position: relative;
+  z-index:999;
+  top:0;
+  left:0;
+  right:0;
+  opacity: 1;
+
+  //opacity: 0.8;
+        li {
+          float:none;
+          margin: 100vmin auto;
+          width: 100vmin;
+          //margin-left:50vmin;
+          //margin-top: 100vmin;
+          //margin-left:0vw;
+        &:nth-child(2) {
+          padding:0;
+          width: 100vw;
+          margin-top: 100vh;
+          //width: 55vw;
+          //margin-left:5vw;
+          float:right;
+        }
+        &:nth-child(3) {
+          padding:0;
+          width: 50vw;
+          margin:auto;
+          margin-top: 100vh;
+          //margin-left:1vw;
+          float:right;
+        }
+        &:nth-child(4) {
+          padding:0;
+          width: 100vw;
+          margin-top: 100vh;
+        }
+
+    }
+
+
+
+  figcaption {
+    display:none;
+  }
+} */
