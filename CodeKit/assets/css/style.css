@@ -774,7 +774,7 @@ header .right {
   position: fixed;
   padding: 2vw;
   padding-bottom: 8.5vmin;
-  z-index: 99999;
+  z-index: 999;
   color: #fff;
   background: #000;
 }
@@ -1018,6 +1018,7 @@ img {
   padding: 0;
   margin: 0;
   margin-top: 60vmin;
+  padding-bottom: 5vmin;
 }
 
 /* .half {
@@ -1029,15 +1030,35 @@ img {
   width: 96vw;
   padding: 0;
   margin: 0;
-  margin: 0 auto 2vmin auto;
+  margin: 0 auto;
   float: none;
+}
+
+.layover {
+  z-index: 9999999 !important;
   position: relative;
-  z-index: 9999999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 .half {
   width: 96vw;
-  margin: 2vmin auto;
+  margin: 0 auto;
+}
+
+.half--left {
+  width: 48vw;
+  float: left;
+}
+
+.half--right {
+  width: 48vw;
+  float: left;
 }
 
 .project-background-white {
@@ -1058,6 +1079,10 @@ img {
   right: 0;
   top: 0;
   z-index: -1;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
