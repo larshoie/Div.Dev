@@ -28,49 +28,87 @@
       }
   }
 
-.project-info {
+
+
+
+
+
+.project-info { //ul
   //@extend .right-page;
   //@extend .project-list;
-  padding: $padding;
+  //padding-top: 20vw + $padding;
+  padding-top: $top;
+  padding-left: $padding;
+  padding-right: $padding;
+  //height:100vh;
   min-height: 100vh;
   position:fixed;
-  top:0;
+  //top:20vmin;
+  //padding-top:25.8vmin;
+  //padding-top: 9.5vmin;
+  //margin-top:-9.5vmin;
+  top:$padding;
   right:0;
   width:50vw;
-  padding-top:32.5vmin;
+  //padding-top:24.1vmin;
+  //padding-top:32.5vmin;
   overflow: hidden;
   background: $dark;
   color: $light;
+  //font-size: 1.3vw; //p
   z-index: 0;
   &:hover {
   //z-index:999;
   }
 }
 
-.meta {
+.meta { //li
   float:left;
   width:100%;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  font-size: 2vw; //resten arver størrelsen
 }
+
 
 .project-title {
-  //float:left;
-  //color:$light;
-  //position:absolute;
-  //z-index:9999;
-  //left:50vw + $padding;
   float:left;
-  -webkit-text-stroke: 0.001rem $light;
-  -webkit-text-fill-color: transparent;
-  font-size: 2vw;
-  line-height:1.2;
+  width:60%;
+  text-align:left;
+  //-webkit-text-stroke: 0.001rem $light;
+  //-webkit-text-fill-color: transparent;
+  font-size: inherit;
+  //line-height:1.2;
 }
 
-time {
-  //display:inline-block;
-  float:left;
-  margin-left: 1rem;
+.project-type {
+  font-size: inherit;
+  float: left;
+  margin-right:5%;
+  width: 25%;
 }
+
+.project-year {
+  //display:inline-block;
+  //float:left;
+  //margin-left: 1rem;
+  font-size: inherit;
+  width: 10%;
+  float: right;
+  text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .project-main-photo {
   padding:0;
@@ -93,6 +131,11 @@ time {
 
 }
 
+@keyframes project-slide-up {
+  from {margin-top:100vh;}
+  to {margin-top: $top * 3.5;}
+}
+
 .project {
   position:relative;
   z-index:99;
@@ -101,7 +144,9 @@ time {
   //background-color: yellow;
   padding:0;
   margin:0;
-  margin-top: 60vmin;
+  animation: project-slide-up 1s 1;
+  margin-top: $top * 3.5; //HHHHHEEEYYYYY
+
   //padding-top:5vw;
   padding-bottom:10vmin;
   //pointer-events:none;

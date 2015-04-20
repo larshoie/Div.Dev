@@ -1,7 +1,7 @@
 .project-list {
   color: $light;
   //z-index: 999;
-  margin-top: 30vmin;
+  padding-top: $top;
   a {
     color:$light;
     &:hover {
@@ -49,9 +49,9 @@
 
   ul {
     //padding: 0 1.5rem;
-    display: block;
+    //display: block;
     //font-size: 2vw;
-    letter-spacing: 0.15rem;
+    //letter-spacing: 0.15rem;
     li {
       display: inline;
     }
@@ -76,7 +76,8 @@
     li:last-child { //year
       width: 10%;
       float: right;
-      text-align: left;
+      //text-align: left;
+      text-align: right;
       //color: transparent;
       //-webkit-text-stroke: 0.05rem $light;
       //display: none;
@@ -141,4 +142,20 @@
   figcaption {
     display:none;
   }
+} */
+
+
+/* .number-projects {
+font-variant-position: super;
+-moz-font-feature-settings: "sups";
+-ms-font-feature-settings: "sups";
+-webkit-font-feature-settings: "sups";
+font-feature-settings: "sups";
+font-size: 4vw;
+position:relative;
+display:inline;
+bottom:3.5vw;
+margin-left: -1.3vw;
+color: $light;
+-webkit-text-stroke: 0 $light;
 } */

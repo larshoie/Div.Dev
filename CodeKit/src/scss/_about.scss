@@ -12,27 +12,9 @@ h1 {
   -webkit-text-stroke-color: $dark;
 }
 
-/* .number-projects {
-font-variant-position: super;
--moz-font-feature-settings: "sups";
--ms-font-feature-settings: "sups";
--webkit-font-feature-settings: "sups";
-font-feature-settings: "sups";
-font-size: 4vw;
-position:relative;
-display:inline;
-bottom:3.5vw;
-margin-left: -1.3vw;
-color: $light;
--webkit-text-stroke: 0 $light;
-} */
-
-
-
-
 
 .about {
-  margin-top: 30vmin;
+  margin-top: $top;
   //margin-bottom: 52vh;
     h2 {
       font-size: 1.5vw;
@@ -47,6 +29,7 @@ color: $light;
   line-height: 1.255;
   line-height: 8.35vw;
   font-size: 6.6vw;
+  font-size: 6.2vw;
   margin-top: -1.9vw;
   -webkit-text-stroke: 0.2rem $dark;
   padding-bottom:10vmin;

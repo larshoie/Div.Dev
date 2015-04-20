@@ -131,7 +131,7 @@ h1, .ingress, .featured li {
  */
 mark {
   background: #ff0;
-  color: #000;
+  color: #1c1c1c;
 }
 
 /**
@@ -553,13 +553,12 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   margin: 0 auto;
-  background: #fff;
+  background: #fcfcfc;
   font-family: "RT Obligat", "Helvetica Neue", sans-serif;
   font-style: condenced;
-  letter-spacing: 0.05rem;
   line-height: 1.4;
   font-size: 2vw;
-  color: #000;
+  color: #1c1c1c;
   text-rendering: optimizeLegibility;
   /* optional: for older browsers */
   -moz-font-feature-settings: "kern=1";
@@ -590,14 +589,14 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #1c1c1c;
   border-bottom: 0.15rem solid transparent;
 }
 
 a:hover, .active {
   text-decoration: none;
-  color: #000;
-  border-bottom: 0.15rem solid #000;
+  color: #1c1c1c;
+  border-bottom: 0.15rem solid #1c1c1c;
 }
 
 li {
@@ -605,7 +604,7 @@ li {
 }
 
 table {
-  color: #fff;
+  color: #fcfcfc;
 }
 table td {
   padding: 0 1.5rem;
@@ -622,45 +621,28 @@ img {
 }
 
 .left-page {
-  padding: 2vw;
+  padding: 3vw;
   z-index: 0;
   top: 0;
   left: 0;
   bottom: 0;
   width: 50vw;
   float: left;
-  background: #fff;
-  color: #000;
+  background: #fcfcfc;
+  color: #1c1c1c;
   min-height: 100vh;
 }
 
 .right-page {
   z-index: 1;
   position: fixed;
-  padding: 2vw;
+  padding: 3vw;
   width: 50%;
-  background: #000;
-  color: #fff;
+  background: #1c1c1c;
+  color: #fcfcfc;
   min-height: 100vh;
   top: 0;
   right: 0;
-}
-
-.logo {
-  display: none;
-  position: fixed;
-  z-index: -1;
-  font-size: 20vw;
-  left: 0;
-  right: 0;
-  top: 40%;
-  bottom: 0;
-  text-align: center;
-  -webkit-text-stroke: 2px #000;
-}
-
-.frontpage span.title {
-  display: none;
 }
 
 header {
@@ -670,12 +652,12 @@ header {
 header .left {
   z-index: 999;
   width: 50vw;
-  color: #000;
-  background: #fff;
+  color: #1c1c1c;
+  background: #fcfcfc;
   left: 0;
   display: block;
   position: fixed;
-  padding: 2vw;
+  padding: 3vw;
   padding-bottom: 8.5vmin;
   /* li:nth-child(1) { //navn på prosjekt
     float: left;
@@ -700,34 +682,34 @@ header .left {
   } */
 }
 header .left a {
-  color: #000;
+  color: #1c1c1c;
 }
 header .right {
   width: 50vw;
   right: 0;
   display: block;
   position: fixed;
-  padding: 2vw;
+  padding: 3vw;
   padding-bottom: 8.5vmin;
   z-index: 999;
-  color: #fff;
-  background: #000;
+  color: #fcfcfc;
+  background: #1c1c1c;
 }
 header .right a {
-  color: #fff;
-  background: #000;
+  color: #fcfcfc;
+  background: #1c1c1c;
   padding-right: 1vmin;
 }
 header .right a:hover {
-  border-color: #fff;
-  background: #000;
+  border-color: #fcfcfc;
+  background: #1c1c1c;
 }
 header .right span.title {
   display: none;
   float: right;
-  background: #000;
+  background: #1c1c1c;
   padding-left: 1vmin;
-  -webkit-text-stroke: 0.03rem #fff;
+  -webkit-text-stroke: 0.03rem #fcfcfc;
   -webkit-text-fill-color: transparent;
 }
 header .right span:before {
@@ -735,11 +717,28 @@ header .right span:before {
   right: 3vw;
   height: 2vw;
   content: '';
-  border-bottom: 0.35vmin solid #fff;
+  border-bottom: 0.35vmin solid #fcfcfc;
   display: inline;
   position: absolute;
   z-index: -1;
   top: 1.5vw;
+}
+
+.frontpage span.title {
+  display: none;
+}
+
+.logo {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  font-size: 20vw;
+  left: 0;
+  right: 0;
+  top: 40%;
+  bottom: 0;
+  text-align: center;
+  -webkit-text-stroke: 2px #1c1c1c;
 }
 
 h1, .ingress, .featured li {
@@ -749,29 +748,15 @@ h1, .ingress, .featured li {
   line-height: 1.2;
   padding: 0;
   margin: -0.253vw;
-  color: #000;
+  color: #1c1c1c;
   -webkit-text-fill-color: transparent;
   /* FF/IE Fuck-fix... Override color (regardless of order) */
   -webkit-text-stroke-width: 0.002rem;
-  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-color: #1c1c1c;
 }
 
-/* .number-projects {
-font-variant-position: super;
--moz-font-feature-settings: "sups";
--ms-font-feature-settings: "sups";
--webkit-font-feature-settings: "sups";
-font-feature-settings: "sups";
-font-size: 4vw;
-position:relative;
-display:inline;
-bottom:3.5vw;
-margin-left: -1.3vw;
-color: $light;
--webkit-text-stroke: 0 $light;
-} */
 .about {
-  margin-top: 30vmin;
+  margin-top: 20vmin;
 }
 .about h2 {
   font-size: 1.5vw;
@@ -784,8 +769,9 @@ color: $light;
   line-height: 1.255;
   line-height: 8.35vw;
   font-size: 6.6vw;
+  font-size: 6.2vw;
   margin-top: -1.9vw;
-  -webkit-text-stroke: 0.2rem #000;
+  -webkit-text-stroke: 0.2rem #1c1c1c;
   padding-bottom: 10vmin;
 }
 
@@ -816,11 +802,11 @@ color: $light;
   //padding-bottom: 1rem;
 } */
 .project-list {
-  color: #fff;
-  margin-top: 30vmin;
+  color: #fcfcfc;
+  padding-top: 20vmin;
 }
 .project-list a {
-  color: #fff;
+  color: #fcfcfc;
 }
 .project-list figure {
   opacity: 0;
@@ -839,10 +825,6 @@ color: $light;
 .project-list figure img {
   min-height: 70vmin;
   width: auto;
-}
-.project-list ul {
-  display: block;
-  letter-spacing: 0.15rem;
 }
 .project-list ul li {
   display: inline;
@@ -864,7 +846,7 @@ color: $light;
 .project-list ul li:last-child {
   width: 10%;
   float: right;
-  text-align: left;
+  text-align: right;
 }
 
 .coming-soon {
@@ -921,9 +903,23 @@ color: $light;
     display:none;
   }
 } */
+/* .number-projects {
+font-variant-position: super;
+-moz-font-feature-settings: "sups";
+-ms-font-feature-settings: "sups";
+-webkit-font-feature-settings: "sups";
+font-feature-settings: "sups";
+font-size: 4vw;
+position:relative;
+display:inline;
+bottom:3.5vw;
+margin-left: -1.3vw;
+color: $light;
+-webkit-text-stroke: 0 $light;
+} */
 .featured li {
   color: transparent;
-  -webkit-text-stroke: 0.2rem #fff;
+  -webkit-text-stroke: 0.2rem #fcfcfc;
 }
 .featured figure {
   opacity: 0;
@@ -941,36 +937,46 @@ color: $light;
 }
 
 .project-info {
-  padding: 2vw;
+  padding-top: 20vmin;
+  padding-left: 3vw;
+  padding-right: 3vw;
   min-height: 100vh;
   position: fixed;
-  top: 0;
+  top: 3vw;
   right: 0;
   width: 50vw;
-  padding-top: 32.5vmin;
   overflow: hidden;
-  background: #000;
-  color: #fff;
+  background: #1c1c1c;
+  color: #fcfcfc;
   z-index: 0;
 }
 
 .meta {
   float: left;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  font-size: 2vw;
 }
 
 .project-title {
   float: left;
-  -webkit-text-stroke: 0.001rem #fff;
-  -webkit-text-fill-color: transparent;
-  font-size: 2vw;
-  line-height: 1.2;
+  width: 60%;
+  text-align: left;
+  font-size: inherit;
 }
 
-time {
+.project-type {
+  font-size: inherit;
   float: left;
-  margin-left: 1rem;
+  margin-right: 5%;
+  width: 25%;
+}
+
+.project-year {
+  font-size: inherit;
+  width: 10%;
+  float: right;
+  text-align: right;
 }
 
 .project-main-photo {
@@ -990,6 +996,23 @@ time {
   width: auto;
 }
 
+@-webkit-keyframes project-slide-up{
+  from{
+    margin-top: 100vh;
+  }
+  to{
+    margin-top: 70vmin;
+  }
+}
+
+@keyframes project-slide-up {
+  from {
+    margin-top: 100vh;
+  }
+  to {
+    margin-top: 70vmin;
+  }
+}
 .project {
   position: relative;
   z-index: 99;
@@ -997,14 +1020,16 @@ time {
   float: left;
   padding: 0;
   margin: 0;
-  margin-top: 60vmin;
+  -webkit-animation: project-slide-up 1s 1;
+          animation: project-slide-up 1s 1;
+  margin-top: 70vmin;
   padding-bottom: 10vmin;
 }
 
 .project-background-white {
   height: 100%;
   width: 50vw;
-  background: #fff;
+  background: #fcfcfc;
   position: absolute;
   left: 0;
   top: 0;
@@ -1012,15 +1037,15 @@ time {
 }
 .project-background-white a {
   position: absolute;
-  left: 2vw;
+  left: 3vw;
   bottom: 2vmin;
-  color: #000;
+  color: #1c1c1c;
 }
 
 .project-background-black {
   height: 100%;
   width: 50vw;
-  background: #000;
+  background: #1c1c1c;
   position: absolute;
   right: 0;
   top: 0;
@@ -1028,12 +1053,12 @@ time {
 }
 .project-background-black a {
   position: absolute;
-  right: 2vw;
+  right: 3vw;
   bottom: 2vmin;
-  color: #fff;
+  color: #fcfcfc;
 }
 .project-background-black ahover {
-  border-color: #fff;
+  border-color: #fcfcfc;
 }
 
 .hide {
@@ -1041,27 +1066,27 @@ time {
 }
 
 .full {
-  width: 96vw;
+  width: 94vw;
   padding: 0;
   margin: 0 auto;
   float: none;
 }
 
 .half {
-  width: 96vw;
+  width: 94vw;
   margin: 0 auto;
 }
 
 .half--left {
   width: 50vw;
   float: left;
-  padding-left: 2vw;
+  padding-left: 3vw;
 }
 
 .half--right {
   width: 50vw;
   float: right;
-  padding-right: 2vw;
+  padding-right: 3vw;
 }
 
 /*# sourceMappingURL=style.css.map */
