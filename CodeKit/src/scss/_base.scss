@@ -3,8 +3,8 @@ body {
   // Layout
   overflow-x:hidden;
   box-sizing: border-box;
-  //padding: 0;
   margin: 0 auto;
+  padding: $padding;
   background: $light;
 
   // Font
@@ -13,7 +13,12 @@ body {
   //letter-spacing: 0.05rem;
   //letter-spacing: 0.2vmin;
   line-height: 1.4;
-  font-size: 2vw;
+  font-size: 1.5rem;
+  font-size: 8vw;
+  @include skjerm {
+    font-size: 2vw;
+    padding: 0;
+  }
   color:$dark;
 
   // Kerning
@@ -100,8 +105,8 @@ body {
     float:none;
     @include skjerm {
       width:50vw;
-      float:left;
-      min-height:100vh;
+      float:none;
+      //min-height:100vh;
     }
   }
 

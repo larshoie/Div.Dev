@@ -1,73 +1,68 @@
 header {
-  //background:$light;
-  //height: 3rem;
-  width: 100vw;
-  z-index: 1;
+width: 100vw;
+height:10vh;
+z-index: 9999;
+background: $light;
+top:0;
+left:0;
+right:0;
+position: fixed;
+@include skjerm {
+  height:0;
+  background: transparent;
+}
 
   .left {
-    z-index: 999;
+    //z-index: 999;
     width: 50vw;
     color: $dark;
-    background: $light;
-    left:0;
+    //background: $dark;
+    left:2vw;
+      @include skjerm {
+        left:0;
+        background: $light;
+      }//skjerm
     display:block;
     position:fixed;
     padding:$padding;
-    padding-bottom: 8.5vmin;
     //padding-bottom: 8.5vmin;
-    a {
-    color: $dark;
+      a {
+      color: $dark;
+        @include skjerm {
+          //color: $dark;
+        }//skjerm
+      }
     }
 
-    /* li:nth-child(1) { //navn på prosjekt
-      float: left;
-      width: 60%;
-      text-align: left;
-      //display: none;
-    }
-    li:nth-child(2) { //type prosjekt
-     float: left;
-     width: 30%;
-     color: transparent;
-     -webkit-text-stroke: 0.05rem $light;
-     //display: none;
-    }
-    li:last-child { //year
-      float: right;
-      width: 10%;
-      text-align: left;
-      color: transparent;
-      -webkit-text-stroke: 0.05rem $light;
-      //display: none;
-    } */
-  }
   .right {
     width: 50vw;
     right:0;
-    display:block;
+    text-align: right;
     position:fixed;
     padding:$padding;
-    padding-bottom: 8.5vmin;
     //padding-bottom: 8.5vmin;
-    z-index: 999;
-    color:$light;
-    background: $dark;
+    //z-index: 999;
+    //background: $light;
     a {
-    color: $light;
-    background: $dark;
+    color: $dark;
     padding-right:1vmin;
     &:hover { border-color:$light; background: $dark;}
     }
+    @include skjerm {
+      background: $dark;
+      text-align: left;
+      a {
+        color: $light;
+        background: $dark;
+      }
+    }//skjerm
     span.title {
-      //padding-left: 10%;
       display:none;
       float:right;
       background: $dark;
       padding-left:1vmin;
       -webkit-text-stroke: 0.03rem $light;
       -webkit-text-fill-color: transparent;
-      //@extend a:hover;
-      //color: $light;
     }
     span:before {
       width: 44vw;
@@ -79,10 +74,9 @@ header {
       position: absolute;
       z-index: -1;
       top: 1.5vw;
-      //bottom: 5.5vmin;
     }
-  }
-}
+  }//right
+}//header
 
 .frontpage span.title {
   display: none;

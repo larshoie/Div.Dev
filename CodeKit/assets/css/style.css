@@ -121,7 +121,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-h1, .ingress, .featured li {
+h1, .featured li {
   font-size: 2em;
   margin: 0;
 }
@@ -431,7 +431,7 @@ table {
 /**
  * 1. Turn on discretionary ligatures for larger headings
  */
-h1, .ingress, .featured li,
+h1, .featured li,
 h2,
 h3 {
   -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
@@ -553,11 +553,13 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   margin: 0 auto;
+  padding: 3vw;
   background: #fcfcfc;
   font-family: "RT Obligat", "Helvetica Neue", sans-serif;
   font-style: condenced;
   line-height: 1.4;
-  font-size: 2vw;
+  font-size: 1.5rem;
+  font-size: 8vw;
   color: #1c1c1c;
   text-rendering: optimizeLegibility;
   /* optional: for older browsers */
@@ -579,6 +581,12 @@ body {
   -moz-font-variant-ligatures: common-ligatures;
        font-variant-ligatures: common-ligatures;
   /* for up-to-date browsers, including IE10 and Opera 21 */
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 2vw;
+    padding: 0;
+  }
 }
 
 *, *:before, *:after {
@@ -630,8 +638,7 @@ img {
 @media (min-width: 960px) {
   .left-page {
     width: 50vw;
-    float: left;
-    min-height: 100vh;
+    float: none;
   }
 }
 
@@ -657,39 +664,33 @@ img {
 
 header {
   width: 100vw;
-  z-index: 1;
+  height: 10vh;
+  z-index: 9999;
+  background: #fcfcfc;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+@media (min-width: 960px) {
+  header {
+    height: 0;
+    background: transparent;
+  }
 }
 header .left {
-  z-index: 999;
   width: 50vw;
   color: #1c1c1c;
-  background: #fcfcfc;
-  left: 0;
+  left: 2vw;
   display: block;
   position: fixed;
   padding: 3vw;
-  padding-bottom: 8.5vmin;
-  /* li:nth-child(1) { //navn på prosjekt
-    float: left;
-    width: 60%;
-    text-align: left;
-    //display: none;
+}
+@media (min-width: 960px) {
+  header .left {
+    left: 0;
+    background: #fcfcfc;
   }
-  li:nth-child(2) { //type prosjekt
-   float: left;
-   width: 30%;
-   color: transparent;
-   -webkit-text-stroke: 0.05rem $light;
-   //display: none;
-  }
-  li:last-child { //year
-    float: right;
-    width: 10%;
-    text-align: left;
-    color: transparent;
-    -webkit-text-stroke: 0.05rem $light;
-    //display: none;
-  } */
 }
 header .left a {
   color: #1c1c1c;
@@ -697,22 +698,27 @@ header .left a {
 header .right {
   width: 50vw;
   right: 0;
-  display: block;
+  text-align: right;
   position: fixed;
   padding: 3vw;
-  padding-bottom: 8.5vmin;
-  z-index: 999;
-  color: #fcfcfc;
-  background: #1c1c1c;
 }
 header .right a {
-  color: #fcfcfc;
-  background: #1c1c1c;
+  color: #1c1c1c;
   padding-right: 1vmin;
 }
 header .right a:hover {
   border-color: #fcfcfc;
   background: #1c1c1c;
+}
+@media (min-width: 960px) {
+  header .right {
+    background: #1c1c1c;
+    text-align: left;
+  }
+  header .right a {
+    color: #fcfcfc;
+    background: #1c1c1c;
+  }
 }
 header .right span.title {
   display: none;
@@ -751,13 +757,9 @@ header .right span:before {
   -webkit-text-stroke: 2px #1c1c1c;
 }
 
-h1, .ingress, .featured li {
-  position: relative;
-  top: 15rem;
-  font-size: 9vw;
+h1, .featured li {
+  font-size: 4rem;
   line-height: 1.2;
-  padding: 0;
-  margin: -0.253vw;
   color: #1c1c1c;
   -webkit-text-fill-color: transparent;
   /* FF/IE Fuck-fix... Override color (regardless of order) */
@@ -765,32 +767,36 @@ h1, .ingress, .featured li {
   -webkit-text-stroke-color: #1c1c1c;
 }
 
-.about {
-  margin-top: 20vmin;
-}
 .about h2 {
   font-size: 1.5vw;
   padding-bottom: 2.5vmin;
 }
 
 .ingress {
-  position: static;
   display: block;
-  line-height: 1.255;
-  line-height: 8.35vw;
-  font-size: 6.6vw;
-  font-size: 6.2vw;
-  margin-top: -1.9vw;
-  -webkit-text-stroke: 0.2rem #1c1c1c;
+  margin-top: 20vmin;
+  font-size: 4rem;
+  font-size: 13.5vw;
+  line-height: 1.2;
+  color: #1c1c1c;
+  -webkit-text-fill-color: transparent;
+  /* FF/IE Fuck-fix... Override color (regardless of order) */
+  -webkit-text-stroke-width: 0.07rem;
+  -webkit-text-stroke-color: #1c1c1c;
   padding-bottom: 10vmin;
+}
+@media (min-width: 960px) {
+  .ingress {
+    -webkit-text-stroke-width: 0.2rem;
+    line-height: 1.255;
+    font-size: 6.2vw;
+    margin: -0.253vw;
+    margin-top: 20vmin;
+  }
 }
 
 .contact {
   padding-bottom: 10vmin;
-}
-
-.approach {
-  display: none;
 }
 
 .experience, .education {
@@ -800,17 +806,6 @@ h1, .ingress, .featured li {
   float: left;
 }
 
-/* .experience {
-  //margin-top: 2rem;
-  //display: block;
-  float: left;
-  padding-bottom: 10rem;
-  //transform: rotate(25deg);
-}
-
-.education li {
-  //padding-bottom: 1rem;
-} */
 .project-list {
   color: #fcfcfc;
   padding-top: 20vmin;
