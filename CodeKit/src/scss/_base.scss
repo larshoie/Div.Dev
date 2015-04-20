@@ -93,38 +93,32 @@ body {
 
   // Page
   .left-page {
-    padding:$padding;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width:50vw;
-    float:left;
     background: $light;
     color:$dark;
-    min-height:100vh;
-    @include tablet {
-      width:100%;
-      float:none;
-      min-height:0;
+    padding:$padding;
+    width:100%;
+    float:none;
+    @include skjerm {
+      width:50vw;
+      float:left;
+      min-height:100vh;
     }
   }
 
   .right-page {
-    z-index:1;
-    position: fixed;
-    padding:$padding;
-    width:50%;
     background: $dark;
     color:$light;
-    min-height:100vh;
-    top: 0;
-    right: 0;
-    @include tablet {
-      position: static;
-      width:100%;
-      float:none;
-      min-height:0;
-      overflow:hidden;
+    padding:$padding;
+    width:100%;
+    float:none;
+    overflow:hidden;
+    @include skjerm {
+      position: fixed;
+      overflow:visible;
+      z-index:1;
+      width:50vw;
+      min-height:100vh;
+      top: 0;
+      right: 0;
     }
   }

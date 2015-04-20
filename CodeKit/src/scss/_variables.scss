@@ -29,19 +29,19 @@
    $screen-width: 960px;
 
    @mixin mobil {
-     @media (max-width: $mobile-width) {
+     @media (min-width: $mobile-width) {
        @content;
      }
    }
 
    @mixin tablet {
-     @media (max-width: $tablet-width) {
+     @media (min-width: $tablet-width) {
        @content;
      }
    }
 
    @mixin skjerm {
-     @media (max-width: $screen-width) {
+     @media (min-width: $screen-width) {
        @content;
      }
    }

@@ -621,43 +621,37 @@ img {
 }
 
 .left-page {
-  padding: 3vw;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 50vw;
-  float: left;
   background: #fcfcfc;
   color: #1c1c1c;
-  min-height: 100vh;
+  padding: 3vw;
+  width: 100%;
+  float: none;
 }
-@media (max-width: 800px) {
+@media (min-width: 960px) {
   .left-page {
-    width: 100%;
-    float: none;
-    min-height: 0;
+    width: 50vw;
+    float: left;
+    min-height: 100vh;
   }
 }
 
 .right-page {
-  z-index: 1;
-  position: fixed;
-  padding: 3vw;
-  width: 50%;
   background: #1c1c1c;
   color: #fcfcfc;
-  min-height: 100vh;
-  top: 0;
-  right: 0;
+  padding: 3vw;
+  width: 100%;
+  float: none;
+  overflow: hidden;
 }
-@media (max-width: 800px) {
+@media (min-width: 960px) {
   .right-page {
-    position: static;
-    width: 100%;
-    float: none;
-    min-height: 0;
-    overflow: hidden;
+    position: fixed;
+    overflow: visible;
+    z-index: 1;
+    width: 50vw;
+    min-height: 100vh;
+    top: 0;
+    right: 0;
   }
 }
 
