@@ -22,3 +22,26 @@
    //"Times New Roman",
    //serif,
    //"Helvetica Neue", sans-serif;
+
+// Breakpoints
+   $mobile-width: 500px;
+   $tablet-width: 800px;
+   $screen-width: 960px;
+
+   @mixin mobil {
+     @media (max-width: $mobile-width) {
+       @content;
+     }
+   }
+
+   @mixin tablet {
+     @media (max-width: $tablet-width) {
+       @content;
+     }
+   }
+
+   @mixin skjerm {
+     @media (max-width: $screen-width) {
+       @content;
+     }
+   }
