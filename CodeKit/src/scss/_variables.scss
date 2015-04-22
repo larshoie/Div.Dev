@@ -4,6 +4,10 @@
    $dark: #1c1c1c;
    //$light: #1c1c1c;
 
+
+   //$light: white;
+   //$dark: blue;
+
 // universal padding (grid etc.)
    $padding:3vw;
    $top:20vmin;
@@ -22,6 +26,11 @@
    //"Times New Roman",
    //serif,
    //"Helvetica Neue", sans-serif;
+
+@mixin hide {
+   position: absolute;
+   clip: rect(0, 0, 0, 0);
+}
 
 // Breakpoints
    $mobile-width: 500px;

@@ -4,7 +4,7 @@ body {
   overflow-x:hidden;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: $padding;
+  //padding: $padding;
   background: $light;
 
   // Font
@@ -16,6 +16,7 @@ body {
   font-size: 1.5rem;
   font-size: 8vw;
   @include skjerm {
+    padding: $padding;
     font-size: 2vw;
     padding: 0;
   }
@@ -98,7 +99,7 @@ body {
 
   // Page
   .left-page {
-    background: $light;
+    background:$light;
     color:$dark;
     padding:$padding;
     width:100%;
@@ -106,24 +107,24 @@ body {
     @include skjerm {
       width:50vw;
       float:none;
-      //min-height:100vh;
     }
   }
 
   .right-page {
-    background: $dark;
-    color:$light;
+    color:$dark;
     padding:$padding;
     width:100%;
     float:none;
     overflow:hidden;
     @include skjerm {
+      color:$light;
+      background:$dark;
       position: fixed;
       overflow:visible;
       z-index:1;
       width:50vw;
       min-height:100vh;
-      top: 0;
-      right: 0;
+      top:0;
+      right:0;
     }
   }

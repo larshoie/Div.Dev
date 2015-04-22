@@ -553,7 +553,6 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 3vw;
   background: #fcfcfc;
   font-family: "RT Obligat", "Helvetica Neue", sans-serif;
   font-style: condenced;
@@ -584,6 +583,7 @@ body {
 }
 @media (min-width: 960px) {
   body {
+    padding: 3vw;
     font-size: 2vw;
     padding: 0;
   }
@@ -628,7 +628,7 @@ img {
   height: auto;
 }
 
-.left-page {
+.left-page, .about, .ingress {
   background: #fcfcfc;
   color: #1c1c1c;
   padding: 3vw;
@@ -636,22 +636,23 @@ img {
   float: none;
 }
 @media (min-width: 960px) {
-  .left-page {
+  .left-page, .about, .ingress {
     width: 50vw;
     float: none;
   }
 }
 
-.right-page {
-  background: #1c1c1c;
-  color: #fcfcfc;
+.right-page, .project-list {
+  color: #1c1c1c;
   padding: 3vw;
   width: 100%;
   float: none;
   overflow: hidden;
 }
 @media (min-width: 960px) {
-  .right-page {
+  .right-page, .project-list {
+    color: #fcfcfc;
+    background: #1c1c1c;
     position: fixed;
     overflow: visible;
     z-index: 1;
@@ -663,100 +664,93 @@ img {
 }
 
 header {
-  width: 100vw;
-  height: 10vh;
-  z-index: 9999;
-  background: #fcfcfc;
-  top: 0;
-  left: 0;
-  right: 0;
+  z-index: 999;
   position: fixed;
+  top: 0;
+}
+header a:hover {
+  border: none;
+}
+
+header nav a:first-child {
+  color: #1c1c1c;
+  background: #fcfcfc;
+}
+
+header nav a:last-child {
+  color: #1c1c1c;
+  background: #fcfcfc;
 }
 @media (min-width: 960px) {
-  header {
-    height: 0;
-    background: transparent;
+  header nav a:last-child {
+    text-align: left;
+    color: #fcfcfc;
+    background: #1c1c1c;
+  }
+  header nav a:hover:last-child {
+    color: #fcfcfc;
   }
 }
-header .left {
+
+header nav a:first-child {
   width: 50vw;
-  color: #1c1c1c;
-  left: 2vw;
+  left: 0;
   display: block;
   position: fixed;
   padding: 3vw;
 }
-@media (min-width: 960px) {
-  header .left {
-    left: 0;
-    background: #fcfcfc;
-  }
-}
-header .left a {
-  color: #1c1c1c;
-}
-header .right {
+
+header nav a:last-child {
   width: 50vw;
+  top: 0;
   right: 0;
+  display: block;
   text-align: right;
   position: fixed;
   padding: 3vw;
 }
-header .right a {
-  color: #1c1c1c;
-  padding-right: 1vmin;
-}
-header .right a:hover {
-  border-color: #fcfcfc;
-  background: #1c1c1c;
-}
 @media (min-width: 960px) {
-  header .right {
-    background: #1c1c1c;
+  header nav a:last-child {
     text-align: left;
   }
-  header .right a {
-    color: #fcfcfc;
-    background: #1c1c1c;
-  }
 }
-header .right span.title {
+
+/* .logo {
   display: none;
-  float: right;
-  background: #1c1c1c;
-  padding-left: 1vmin;
-  -webkit-text-stroke: 0.03rem #fcfcfc;
+  position:fixed;
+  z-index:-1;
+  font-size: 20vw;
+  //color: blue;
+  left:0;
+  right:0;
+  top:40%;
+  bottom:0;
+  text-align: center;
+  -webkit-text-stroke: 2px $dark;
+}
+ */
+/* span.title {
+  @include hide;;
+  float:right;
+  background: $dark;
+  padding-left:1vmin;
+  -webkit-text-stroke: 0.03rem $light;
   -webkit-text-fill-color: transparent;
 }
-header .right span:before {
+span:before {
   width: 44vw;
   right: 3vw;
   height: 2vw;
   content: '';
-  border-bottom: 0.35vmin solid #fcfcfc;
+  border-bottom: 0.35vmin solid $light;
   display: inline;
   position: absolute;
   z-index: -1;
   top: 1.5vw;
-}
-
-.frontpage span.title {
-  display: none;
-}
-
-.logo {
-  display: none;
-  position: fixed;
-  z-index: -1;
-  font-size: 20vw;
-  left: 0;
-  right: 0;
-  top: 40%;
-  bottom: 0;
-  text-align: center;
-  -webkit-text-stroke: 2px #1c1c1c;
-}
-
+} */
+/* .frontpage span.title {
+  @include hide;
+} */
 h1, .featured li {
   font-size: 4rem;
   line-height: 1.2;
@@ -806,52 +800,81 @@ h1, .featured li {
   float: left;
 }
 
-.project-list {
-  color: #fcfcfc;
-  padding-top: 20vmin;
-}
-.project-list a {
-  color: #fcfcfc;
-}
-.project-list figure {
-  opacity: 0;
-  padding: 0;
-  margin: 0;
-  z-index: -999;
-  position: fixed;
+.project {
   overflow: hidden;
-  top: 15vmin;
-  left: 10vmin;
-  bottom: 10vmin;
-  right: 10vmin;
-  right: 50vw;
-  pointer-events: none;
+  width: 100%;
+  display: block;
 }
-.project-list figure img {
-  min-height: 70vmin;
-  width: auto;
+
+@media (min-width: 960px) {
+  .project:hover .project-image {
+    background: yellow;
+    opacity: 1;
+  }
 }
-.project-list ul li {
+
+@media (min-width: 960px) {
+  .project-image {
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    overflow: hidden;
+    top: 15vmin;
+    left: 10vmin;
+    bottom: 10vmin;
+    right: 10vmin;
+    right: 50vw;
+    pointer-events: none;
+  }
+  .project-image img {
+    min-height: 70vmin;
+    width: auto;
+  }
+}
+
+.project-list {
+  /* .project-title { //navn på prosjekt
+    float:none;
+    @include skjerm {
+      float: left;
+      width: 60%;
+      text-align: left;
+      //display: none;
+      &:hover figure {
+        opacity: 1;
+        }
+    }
+  } */
+  /*     .project-type { //type prosjekt
+   float: left;
+   margin-right:5%;
+   width: 25%;
+   text-align: left;
+   //color: transparent;
+   //-webkit-text-stroke: 0.05rem $light;
+   //@include hide;
+  } */
+  /*     .project-year { //year
+    width: 10%;
+    float: right;
+    text-align: right;
+    //color: transparent;
+    //-webkit-text-stroke: 0.05rem $light;
+    //display: none;
+  } */
+}
+@media (min-width: 960px) {
+  .project-list {
+    color: #fcfcfc;
+    padding-top: 20vmin;
+  }
+  .project-list a {
+    color: #fcfcfc;
+  }
+}
+.project-list li {
   display: inline;
-}
-.project-list ul li:nth-child(1) {
-  float: left;
-  width: 60%;
-  text-align: left;
-}
-.project-list ul li:nth-child(1):hover figure {
-  opacity: 1;
-}
-.project-list ul li:nth-child(2) {
-  float: left;
-  margin-right: 5%;
-  width: 25%;
-  text-align: left;
-}
-.project-list ul li:last-child {
-  width: 10%;
-  float: right;
-  text-align: right;
 }
 
 .coming-soon {
@@ -861,7 +884,7 @@ h1, .featured li {
 
 /*
 .project-images {
-  display:none;
+  @include hide;;
   padding-top: 10rem;
   position: relative;
   z-index:999;
@@ -905,7 +928,7 @@ h1, .featured li {
 
 
   figcaption {
-    display:none;
+    @include hide;;
   }
 } */
 /* .number-projects {
@@ -1018,7 +1041,7 @@ color: $light;
     margin-top: 70vmin;
   }
 }
-.project {
+.project-content {
   position: relative;
   z-index: 99;
   width: 100vw;
@@ -1067,7 +1090,8 @@ color: $light;
 }
 
 .hide {
-  display: none;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
 .full {

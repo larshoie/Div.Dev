@@ -1,102 +1,105 @@
-.project-list {
-  color: $light;
-  //z-index: 999;
-  padding-top: $top;
-  a {
-    color:$light;
-    &:hover {
-      //border: 2px solid $light;
-      //color:$dark;
+ul.project {
+  //@include hide;
+}
+
+.project {
+  overflow: hidden;
+  width: 100%;
+  //background: red;
+  display: block;
+}
+
+.project:hover .project-image {
+  @include skjerm {
+  background:yellow;
+  opacity:1;
+  }
+}
+
+.project-image {
+@include skjerm {
+  opacity:0; //!!!!OMG WTF
+  padding:0;
+  margin:0;
+  position: fixed;
+  overflow:hidden;
+  top:15vmin;
+  left:10vmin;
+  bottom:10vmin;
+  right:10vmin;
+  right:50vw;
+  pointer-events:none;
+     img {
+      min-height:70vmin;
+      width:auto;
     }
   }
-    figure {
-      opacity:0;
-      padding:0;
-      margin:0;
-      z-index:-999;
-      position: fixed;
-      //top: 0;
-      //left: 30vmin;
-      //right: 30vmin;
-      //bottom: 30vmin;
-      //max-height:100%;
-      //width:60%;
-      //left:50%;
-      //margin: 0 0 0 -30%;
-      //width:50vw;
-      //left:0vmin;
-      //top:0vmin;
-      //bottom:0vmin;
-      overflow:hidden;
+}
 
-      //min-width:50vmin;
-      //min-height: 50vmin;
-      top:15vmin;
-      left:10vmin;
-      bottom:10vmin;
-      right:10vmin;
-      right:50vw;
-      //margin: 0 0 0 -25vmin;
 
-      pointer-events:none;
-         img {
-          min-height: 70vmin;
-          width:auto;
-          //margin-left:-25vmin;
+
+
+.project-list {
+  @extend .right-page;
+    @include skjerm {
+    color: $light;
+    padding-top: $top;
+        a {
+          color:$light;
+          &:hover {
+            //border: 2px solid $light;
+            //color:$dark;
+          }
         }
     }
 
 
-  ul {
-    //padding: 0 1.5rem;
-    //display: block;
-    //font-size: 2vw;
-    //letter-spacing: 0.15rem;
+
     li {
       display: inline;
     }
-    li:nth-child(1) { //navn på prosjekt
-      float: left;
-      width: 60%;
-      text-align: left;
-      //display: none;
-      &:hover figure {
-        opacity: 1;
-        }
-    }
-    li:nth-child(2) { //type prosjekt
+
+    /* .project-title { //navn på prosjekt
+      float:none;
+      @include skjerm {
+        float: left;
+        width: 60%;
+        text-align: left;
+        //display: none;
+        &:hover figure {
+          opacity: 1;
+          }
+      }
+    } */
+
+    /*     .project-type { //type prosjekt
      float: left;
      margin-right:5%;
      width: 25%;
      text-align: left;
      //color: transparent;
      //-webkit-text-stroke: 0.05rem $light;
-     //display: none;
-    }
-    li:last-child { //year
+     //@include hide;
+    } */
+
+    /*     .project-year { //year
       width: 10%;
       float: right;
-      //text-align: left;
       text-align: right;
       //color: transparent;
       //-webkit-text-stroke: 0.05rem $light;
       //display: none;
-    }
+    } */
   }
-}
 
 .coming-soon {
   text-decoration: line-through;
   color: #999;
 }
 
-
-
-
-
 /*
 .project-images {
-  display:none;
+  @include hide;;
   padding-top: 10rem;
   position: relative;
   z-index:999;
@@ -140,7 +143,7 @@
 
 
   figcaption {
-    display:none;
+    @include hide;;
   }
 } */
 
