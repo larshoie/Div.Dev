@@ -755,9 +755,13 @@ h1, .featured li {
   font-size: 4rem;
   line-height: 1.2;
   color: #1c1c1c;
+}
+
+.ingress {
+  color: #1c1c1c;
   -webkit-text-fill-color: transparent;
   /* FF/IE Fuck-fix... Override color (regardless of order) */
-  -webkit-text-stroke-width: 0.002rem;
+  -webkit-text-stroke-width: 0.3vmax;
   -webkit-text-stroke-color: #1c1c1c;
 }
 
@@ -773,15 +777,10 @@ h1, .featured li {
   font-size: 13.5vw;
   line-height: 1.2;
   color: #1c1c1c;
-  -webkit-text-fill-color: transparent;
-  /* FF/IE Fuck-fix... Override color (regardless of order) */
-  -webkit-text-stroke-width: 0.07rem;
-  -webkit-text-stroke-color: #1c1c1c;
   padding-bottom: 10vmin;
 }
 @media (min-width: 960px) {
   .ingress {
-    -webkit-text-stroke-width: 0.2rem;
     line-height: 1.255;
     font-size: 6.2vw;
     margin: -0.253vw;

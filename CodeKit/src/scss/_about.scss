@@ -2,15 +2,18 @@ h1 {
   font-size: 4rem;
   line-height: 1.2;
   color: $dark;
-  -webkit-text-fill-color: transparent; /* FF/IE Fuck-fix... Override color (regardless of order) */
-  -webkit-text-stroke-width: 0.002rem;
-  -webkit-text-stroke-color: $dark;
 }
 
+%dark-outline {
+  color: $dark;
+  -webkit-text-fill-color: transparent; /* FF/IE Fuck-fix... Override color (regardless of order) */
+  -webkit-text-stroke-width: 0.3vmax;
+  -webkit-text-stroke-color: $dark;
+
+}
 
 .about {
   @extend .left-page;
-  //margin-top: $top;
     h2 {
       font-size: 1.5vw;
       padding-bottom: 2.5vmin;
@@ -19,23 +22,21 @@ h1 {
 
 .ingress {
   @extend .left-page;
+  @extend  %dark-outline;
   display:block;
   margin-top: $top; //viktig
   font-size: 4rem;
   font-size: 13.5vw;
   line-height: 1.2;
   color: $dark;
-  -webkit-text-fill-color: transparent; /* FF/IE Fuck-fix... Override color (regardless of order) */
-  -webkit-text-stroke-width: 0.07rem;
-  -webkit-text-stroke-color: $dark;
+  //-webkit-text-stroke-width: 0.07rem;
   padding-bottom:10vmin;
   @include skjerm {
-    -webkit-text-stroke-width: 0.2rem;
+    //-webkit-text-stroke-width: 0.2rem;
     line-height: 1.255;
     //line-height: 8.35vw;
     //font-size: 6.6vw;
     font-size: 6.2vw;
-    //margin-top: -1.9vw;
     margin:-0.253vw;
     margin-top: $top; //viktig
 
