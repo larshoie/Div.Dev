@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.about h2 {
+  border-bottom: 0.2rem solid #1c1c1c;
+  display: inline;
+}
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -402,10 +407,13 @@ th {
  */
 ::-moz-selection{
   color: inherit;
+
   /* 1. */
   text-shadow: inherit;
+
   /* 2. */
   background-color: #ACCEF7;
+
   /* 3. */
 }
 ::selection {
@@ -550,12 +558,36 @@ caption {
 }
 
 body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow-x: hidden;
   box-sizing: border-box;
   margin: 0 auto;
   background: #fcfcfc;
   font-family: "RT Obligat", "Helvetica Neue", sans-serif;
   font-style: condenced;
+  letter-spacing: 0.07rem;
   line-height: 1.4;
   font-size: 1.5rem;
   font-size: 8vw;
@@ -587,6 +619,24 @@ body {
     font-size: 2vw;
     padding: 0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c;
+}
+
+::-webkit-scrollbar-track {
+  background: #8d8d8d;
+}
+
+body {
+  scrollbar-face-color: #1c1c1c;
+  scrollbar-track-color: #8d8d8d;
 }
 
 *, *:before, *:after {
@@ -637,8 +687,9 @@ img {
 }
 @media (min-width: 960px) {
   .left-page, .about, .ingress {
-    width: 50vw;
+    width: 50%;
     float: none;
+    margin-left: -50%;
   }
 }
 
@@ -656,7 +707,7 @@ img {
     position: fixed;
     overflow: visible;
     z-index: 1;
-    width: 50vw;
+    width: 50%;
     min-height: 100vh;
     top: 0;
     right: 0;
@@ -693,7 +744,7 @@ header nav a:last-child {
 }
 
 header nav a:first-child {
-  width: 50vw;
+  width: 50%;
   left: 0;
   display: block;
   position: fixed;
@@ -701,7 +752,7 @@ header nav a:first-child {
 }
 
 header nav a:last-child {
-  width: 50vw;
+  width: 50%;
   top: 0;
   right: 0;
   display: block;
@@ -765,16 +816,45 @@ h1, .featured li {
   -webkit-text-stroke-color: #1c1c1c;
 }
 
+.about {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
+}
 .about h2 {
-  font-size: 1.5vw;
-  padding-bottom: 2.5vmin;
+  font-size: inherit;
+  line-height: 4;
+}
+@media (min-width: 960px) {
+  .about h2 {
+    font-size: 1.5vw;
+  }
 }
 
 .ingress {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
   display: block;
-  margin-top: 20vmin;
   font-size: 4rem;
   font-size: 13.5vw;
+  font-size: 6.5vmax;
   line-height: 1.2;
   color: #1c1c1c;
   padding-bottom: 10vmin;
@@ -792,14 +872,17 @@ h1, .featured li {
   padding-bottom: 10vmin;
 }
 
-.experience, .education {
-  width: 50%;
-  font-size: 1.5vw;
-  padding-bottom: 1rem;
-  float: left;
+@media (min-width: 960px) {
+  .experience, .education {
+    width: 50%;
+    font-size: 1.5vw;
+    padding-bottom: 1rem;
+    float: left;
+  }
 }
 
 .project {
+  color: #fcfcfc;
   overflow: hidden;
   width: 100%;
   display: block;
@@ -807,11 +890,15 @@ h1, .featured li {
 
 @media (min-width: 960px) {
   .project:hover .project-image {
-    background: yellow;
-    opacity: 1;
+    opacity: 1 !important;
+    display: block;
+    position: fixed !important;
   }
 }
 
+.project-image {
+  display: none;
+}
 @media (min-width: 960px) {
   .project-image {
     opacity: 0;
@@ -823,7 +910,8 @@ h1, .featured li {
     left: 10vmin;
     bottom: 10vmin;
     right: 10vmin;
-    right: 50vw;
+    right: 50%;
+    right: 50%;
     pointer-events: none;
   }
   .project-image img {
@@ -832,7 +920,37 @@ h1, .featured li {
   }
 }
 
+.vertical-half, .ingress, .ingress {
+  height: 50vh;
+  float: left;
+  padding: 3vw;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+@media (min-width: 960px) {
+  .vertical-half, .ingress, .ingress {
+    position: static;
+    margin-left: -50%;
+    height: auto !important;
+  }
+}
+
 .project-list {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
+  background: #1c1c1c;
+  margin-top: 50vh;
+  min-height: 110vh;
   /* .project-title { //navn på prosjekt
     float:none;
     @include skjerm {
@@ -865,8 +983,10 @@ h1, .featured li {
 }
 @media (min-width: 960px) {
   .project-list {
+    margin-top: 0;
+    top: -10vh;
+    padding-top: 35vh;
     color: #fcfcfc;
-    padding-top: 20vmin;
   }
   .project-list a {
     color: #fcfcfc;
@@ -881,69 +1001,6 @@ h1, .featured li {
   color: #999;
 }
 
-/*
-.project-images {
-  @include hide;;
-  padding-top: 10rem;
-  position: relative;
-  z-index:999;
-  top:0;
-  left:0;
-  right:0;
-  opacity: 1;
-
-  //opacity: 0.8;
-        li {
-          float:none;
-          margin: 100vmin auto;
-          width: 100vmin;
-          //margin-left:50vmin;
-          //margin-top: 100vmin;
-          //margin-left:0vw;
-        &:nth-child(2) {
-          padding:0;
-          width: 100vw;
-          margin-top: 100vh;
-          //width: 55vw;
-          //margin-left:5vw;
-          float:right;
-        }
-        &:nth-child(3) {
-          padding:0;
-          width: 50vw;
-          margin:auto;
-          margin-top: 100vh;
-          //margin-left:1vw;
-          float:right;
-        }
-        &:nth-child(4) {
-          padding:0;
-          width: 100vw;
-          margin-top: 100vh;
-        }
-
-    }
-
-
-
-  figcaption {
-    @include hide;;
-  }
-} */
-/* .number-projects {
-font-variant-position: super;
--moz-font-feature-settings: "sups";
--ms-font-feature-settings: "sups";
--webkit-font-feature-settings: "sups";
-font-feature-settings: "sups";
-font-size: 4vw;
-position:relative;
-display:inline;
-bottom:3.5vw;
-margin-left: -1.3vw;
-color: $light;
--webkit-text-stroke: 0 $light;
-} */
 .featured li {
   color: transparent;
   -webkit-text-stroke: 0.2rem #fcfcfc;
@@ -971,7 +1028,7 @@ color: $light;
   position: fixed;
   top: 3vw;
   right: 0;
-  width: 50vw;
+  width: 50%;
   overflow: hidden;
   background: #1c1c1c;
   color: #fcfcfc;
@@ -1015,7 +1072,7 @@ color: $light;
   top: 15vmin;
   left: 10vmin;
   bottom: 10vmin;
-  right: 50vw;
+  right: 50%;
   pointer-events: none;
 }
 .project-main-photo img {
@@ -1055,7 +1112,7 @@ color: $light;
 
 .project-background-white {
   height: 100%;
-  width: 50vw;
+  width: 50%;
   background: #fcfcfc;
   position: absolute;
   left: 0;
@@ -1071,7 +1128,7 @@ color: $light;
 
 .project-background-black {
   height: 100%;
-  width: 50vw;
+  width: 50%;
   background: #1c1c1c;
   position: absolute;
   right: 0;
@@ -1094,9 +1151,13 @@ color: $light;
 }
 
 .full {
-  width: 94vw;
-  padding: 0;
+  /*   width: 100vw - $padding * 2;
+  padding:0;
   margin: 0 auto;
+  float:none; */
+  width: 94%;
+  padding: 0;
+  margin: 0 auto 20vh auto;
   float: none;
 }
 
@@ -1106,15 +1167,27 @@ color: $light;
 }
 
 .half--left {
-  width: 50vw;
+  width: 50%;
   float: left;
   padding-left: 3vw;
 }
 
 .half--right {
-  width: 50vw;
+  width: 50%;
   float: right;
   padding-right: 3vw;
+}
+
+.vertical-half, .ingress {
+  height: 50vh;
+  float: left;
+  padding: 3vw;
+}
+
+.vertical-full {
+  height: 100vh;
+  float: left;
+  padding: 3vw;
 }
 
 /*# sourceMappingURL=style.css.map */

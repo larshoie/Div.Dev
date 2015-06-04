@@ -23,7 +23,7 @@ top:0;
 }
 
 %left {
-  width: 50vw;
+  width: 50%;
   left:0;
   display:block;
   position:fixed;
@@ -31,7 +31,8 @@ top:0;
   }
 
 %right {
-  width: 50vw;
+  width: 50%;
+  //width: 50.15%;
   top:0;
   right:0;
   display:block;

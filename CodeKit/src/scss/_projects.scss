@@ -3,21 +3,32 @@ ul.project {
 }
 
 .project {
+  color: $light;
   overflow: hidden;
   width: 100%;
-  //background: red;
+  //height:50vh;
   display: block;
+  &:nth-child(even) {
+    //background:$dark;
+  }
+  &:nth-child(odd) {
+    //background:$light;
+  }
 }
 
 .project:hover .project-image {
   @include skjerm {
-  background:yellow;
-  opacity:1;
+  //background:yellow;
+  opacity:1!important;
+  display:block;
+  position:fixed!important;
   }
 }
 
 .project-image {
-@include skjerm {
+  //@include hide;
+  display:none;
+  @include skjerm {
   opacity:0; //!!!!OMG WTF
   padding:0;
   margin:0;
@@ -27,7 +38,8 @@ ul.project {
   left:10vmin;
   bottom:10vmin;
   right:10vmin;
-  right:50vw;
+  right:50%;
+  right:50%;
   pointer-events:none;
      img {
       min-height:70vmin;
@@ -36,14 +48,35 @@ ul.project {
   }
 }
 
-
-
+.vertical-half, .ingress {
+  height: 50vh;
+  float: left;
+  padding: 3vw;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+    @include skjerm {
+    position:static;
+    margin-left:-50%;
+    height: auto!important;
+    }
+}
 
 .project-list {
+    order: 2;
+    flex: 0 1 auto;
+    align-self: auto;
+  background: $dark;
+  margin-top:50vh;
+  min-height:110vh;
   @extend .right-page;
     @include skjerm {
-    color: $light;
-    padding-top: $top;
+      margin-top:0;
+      //padding-top:50vh;
+      top: -10vh;
+      padding-top: 35vh;
+      color: $light;
+    //padding-top: $top;
         a {
           color:$light;
           &:hover {
@@ -52,8 +85,6 @@ ul.project {
           }
         }
     }
-
-
 
     li {
       display: inline;
@@ -96,69 +127,3 @@ ul.project {
   text-decoration: line-through;
   color: #999;
 }
-
-/*
-.project-images {
-  @include hide;;
-  padding-top: 10rem;
-  position: relative;
-  z-index:999;
-  top:0;
-  left:0;
-  right:0;
-  opacity: 1;
-
-  //opacity: 0.8;
-        li {
-          float:none;
-          margin: 100vmin auto;
-          width: 100vmin;
-          //margin-left:50vmin;
-          //margin-top: 100vmin;
-          //margin-left:0vw;
-        &:nth-child(2) {
-          padding:0;
-          width: 100vw;
-          margin-top: 100vh;
-          //width: 55vw;
-          //margin-left:5vw;
-          float:right;
-        }
-        &:nth-child(3) {
-          padding:0;
-          width: 50vw;
-          margin:auto;
-          margin-top: 100vh;
-          //margin-left:1vw;
-          float:right;
-        }
-        &:nth-child(4) {
-          padding:0;
-          width: 100vw;
-          margin-top: 100vh;
-        }
-
-    }
-
-
-
-  figcaption {
-    @include hide;;
-  }
-} */
-
-
-/* .number-projects {
-font-variant-position: super;
--moz-font-feature-settings: "sups";
--ms-font-feature-settings: "sups";
--webkit-font-feature-settings: "sups";
-font-feature-settings: "sups";
-font-size: 4vw;
-position:relative;
-display:inline;
-bottom:3.5vw;
-margin-left: -1.3vw;
-color: $light;
--webkit-text-stroke: 0 $light;
-} */

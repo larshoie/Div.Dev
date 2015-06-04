@@ -1,9 +1,17 @@
+//horizontal grid
+
 .full {
-  width: 100vw - $padding * 2;
-  padding:0;
-  margin: 0 auto;
-  float:none;
+/*   width: 100vw - $padding * 2;
+padding:0;
+margin: 0 auto;
+float:none; */
+
+  width: 94%;
+  padding: 0;
+  margin: 0 auto 20vh auto;
+  float: none;
 }
+
 
 .half {
   width: 100vw - $padding * 2;
@@ -11,15 +19,29 @@
 }
 
 .half--left {
-  width: 50vw;
+  width: 50%;
   float:left;
   padding-left:$padding;
   //height:100%;
 }
 
 .half--right {
-  width: 50vw;
+  width: 50%;
   float:right;
   padding-right:$padding;
   //height:100%;
+}
+
+//vertical grid
+
+.vertical-half {
+  height: 50vh;
+  float:left;
+  padding:$padding;
+}
+
+.vertical-full {
+  height: 100vh;
+  float:left;
+  padding:$padding;
 }

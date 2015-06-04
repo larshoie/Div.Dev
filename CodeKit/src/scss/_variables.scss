@@ -2,6 +2,7 @@
    $light: #fcfcfc;
    //$dark: #fcfcfc;
    $dark: #1c1c1c;
+   //$dark: blue;
    //$light: #1c1c1c;
 
 
@@ -27,10 +28,37 @@
    //serif,
    //"Helvetica Neue", sans-serif;
 
+   %underlined {
+      border-bottom: 0.2rem solid $dark;
+      display:inline;
+   }
+
 @mixin hide {
    position: absolute;
    clip: rect(0, 0, 0, 0);
 }
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
 
 // Breakpoints
    $mobile-width: 500px;
